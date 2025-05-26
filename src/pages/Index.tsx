@@ -19,6 +19,7 @@ import {
   Star
 } from 'lucide-react';
 import { ModernEffectsDemo } from '@/components/modern-effects-demo';
+import { CasesSection } from '@/components/cases-section';
 import { BackgroundLines } from '@/components/ui/background-lines';
 import { motion } from 'motion/react';
 
@@ -112,6 +113,9 @@ const Index = () => {
 
       {/* Modern Effects Section */}
       <ModernEffectsDemo />
+
+      {/* Cases Section */}
+      <CasesSection />
 
       {/* Services Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">

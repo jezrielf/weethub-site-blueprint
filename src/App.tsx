@@ -11,6 +11,7 @@ import SobreNos from "./pages/SobreNos";
 import Blog from "./pages/Blog";
 import FaleConosco from "./pages/FaleConosco";
 import TrabalheConosco from "./pages/TrabalheConosco";
+import Cases from "./pages/Cases";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/loja-virtual" element={<LojaVirtual />} />
           <Route path="/sobre-nos" element={<SobreNos />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/cases" element={<Cases />} />
           <Route path="/fale-conosco" element={<FaleConosco />} />
           <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
