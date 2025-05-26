@@ -13,97 +13,89 @@ import {
   ArrowRight,
   Target,
   TrendingUp,
-  Globe
+  Globe,
+  Award,
+  Rocket,
+  Star
 } from 'lucide-react';
+import { GoogleGeminiEffectDemo } from '@/components/google-gemini-effect-demo';
 
 const Index = () => {
   const services = [
     {
       icon: <BarChart3 className="h-8 w-8" />,
       title: "Assessoria Completa",
-      description: "Análise e execução de estratégias eficazes baseadas em estudos de mercado e performance.",
+      description: "Analisamos cada aspecto do seu negócio online, identificando oportunidades de melhoria e implementando estratégias eficazes baseadas em estudos de mercado e análise de performance.",
       link: "/assessoria"
     },
     {
       icon: <ShoppingCart className="h-8 w-8" />,
-      title: "Loja Virtual",
-      description: "Soluções completas para e-commerce com sistemas responsivos e otimizados para conversão.",
+      title: "Lojas Virtuais Personalizadas",
+      description: "Desenvolvemos lojas virtuais otimizadas e prontas para vender, integradas com as melhores plataformas e servidores do país.",
       link: "/loja-virtual"
     },
     {
       icon: <Target className="h-8 w-8" />,
-      title: "Marketing Digital",
-      description: "Estratégias integradas de marketing para aumentar sua presença online e gerar resultados.",
+      title: "Consultoria de Vendas Online",
+      description: "Oferecemos consultoria especializada para aprimorar suas estratégias de vendas online com métodos validados no mercado digital.",
       link: "/blog"
     }
   ];
 
+  const results = [
+    { value: "112%", label: "Crescimento no faturamento em 30 dias" },
+    { value: "93%", label: "Aumento no número de pedidos" },
+    { value: "15%", label: "Incremento no ticket médio" },
+    { value: "R$50k+", label: "Projetos mensais de alto valor" }
+  ];
+
   const benefits = [
     "Mais de 20 anos de experiência no mercado digital",
-    "Equipe especializada em e-commerce e marketing",
-    "Metodologia comprovada para acelerar resultados",
+    "Metodologia baseada em dados e performance",
+    "Parcerias com as principais plataformas do mercado",
+    "Resultados comprovados em projetos de alto valor",
+    "Equipe especializada em BI, CRM, SEO e CRO",
     "Suporte completo do planejamento à execução"
+  ];
+
+  const partners = [
+    "Nuvemshop", "Google Ads", "Facebook Ads", "RD Station", "Mailchimp"
   ];
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-weethub-yellow via-yellow-400 to-yellow-300 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
-              Transforme seu negócio
-              <br />
-              <span className="text-gray-800">no mundo digital</span>
-            </h1>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-              Soluções completas em e-commerce, marketing digital e desenvolvimento web 
-              para acelerar o crescimento da sua empresa.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800">
-                <Link to="/fale-conosco">
-                  Fale Conosco
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white">
-                <Link to="/sobre-nos">
-                  Conheça Nossa História
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
+      {/* Hero Section with Google Gemini Effect */}
+      <section className="bg-black text-white relative overflow-hidden">
+        <GoogleGeminiEffectDemo />
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Nossos Serviços
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+              Nossas Soluções Estratégicas
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Oferecemos soluções completas para transformar sua presença digital
-              e acelerar o crescimento do seu negócio.
+              e gerar resultados excepcionais em projetos de alto valor.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-2 hover:border-weethub-yellow">
+              <Card key={index} className="bg-gray-800 border-gray-700 hover:border-weethub-yellow transition-all duration-300 group">
                 <CardHeader className="text-center">
-                  <div className="mx-auto mb-4 p-3 bg-weethub-yellow rounded-full w-fit">
+                  <div className="mx-auto mb-4 p-3 bg-weethub-yellow rounded-full w-fit group-hover:scale-110 transition-transform">
                     {service.icon}
                   </div>
-                  <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <CardDescription className="text-gray-600 mb-6">
+                  <CardDescription className="text-gray-300 mb-6">
                     {service.description}
                   </CardDescription>
-                  <Button asChild variant="outline" className="w-full">
+                  <Button asChild variant="outline" className="w-full border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black">
                     <Link to={service.link}>
                       Saiba Mais
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -116,69 +108,139 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Results Section */}
+      <section className="py-20 bg-black text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+              Resultados Comprovados
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Empresas que confiaram na Weethub alcançaram resultados significativos
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+            {results.map((result, index) => (
+              <div key={index} className="text-center p-6 bg-gray-900 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors">
+                <div className="text-4xl font-bold text-weethub-yellow mb-2">{result.value}</div>
+                <div className="text-gray-300">{result.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
-      <section className="py-20 bg-weethub-gray">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                Por que escolher a Weethub?
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+                Metodologia Baseada em Dados e Performance
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Nossa experiência e metodologia comprovada garantem resultados 
-                excepcionais para nossos clientes.
+              <p className="text-lg text-gray-300 mb-8">
+                Nossa abordagem é fundamentada em dados concretos e análise de performance. 
+                Utilizamos ferramentas avançadas de BI, CRM, SEO, CRO e tráfego pago para 
+                tomar decisões estratégicas que impulsionam o crescimento do seu e-commerce.
               </p>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-weethub-yellow flex-shrink-0" />
-                    <span className="text-gray-700">{benefit}</span>
+                    <span className="text-gray-300">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-6 bg-white rounded-lg shadow-md">
-                <TrendingUp className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
-                <div className="text-2xl font-bold text-black">500+</div>
-                <div className="text-gray-600">Projetos Entregues</div>
+              <div className="text-center p-6 bg-black rounded-lg border border-gray-800">
+                <Award className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
+                <div className="text-2xl font-bold text-white">20+</div>
+                <div className="text-gray-400">Anos de Experiência</div>
               </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-md">
+              <div className="text-center p-6 bg-black rounded-lg border border-gray-800">
+                <Rocket className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
+                <div className="text-2xl font-bold text-white">500+</div>
+                <div className="text-gray-400">Projetos Entregues</div>
+              </div>
+              <div className="text-center p-6 bg-black rounded-lg border border-gray-800">
                 <Users className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
-                <div className="text-2xl font-bold text-black">20+</div>
-                <div className="text-gray-600">Anos de Experiência</div>
+                <div className="text-2xl font-bold text-white">300+</div>
+                <div className="text-gray-400">Clientes Ativos</div>
               </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-md">
-                <Globe className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
-                <div className="text-2xl font-bold text-black">300+</div>
-                <div className="text-gray-600">Clientes Ativos</div>
-              </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-md">
-                <Zap className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
-                <div className="text-2xl font-bold text-black">98%</div>
-                <div className="text-gray-600">Satisfação</div>
+              <div className="text-center p-6 bg-black rounded-lg border border-gray-800">
+                <Star className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
+                <div className="text-2xl font-bold text-white">98%</div>
+                <div className="text-gray-400">Satisfação</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Partners Section */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Pronto para transformar seu negócio?
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+            Parcerias Estratégicas
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Entre em contato conosco e descubra como podemos acelerar 
-            o crescimento da sua empresa no mundo digital.
+          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Somos parceiros das principais plataformas e ferramentas do mercado, 
+            garantindo soluções integradas e eficientes para o seu negócio
           </p>
-          <Button asChild size="lg" className="bg-weethub-yellow text-black hover:bg-weethub-yellow-dark">
-            <Link to="/fale-conosco">
-              Solicitar Orçamento
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {partners.map((partner, index) => (
+              <div key={index} className="bg-gray-900 px-6 py-3 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors">
+                <span className="text-gray-300 font-medium">{partner}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-weethub-yellow to-yellow-600 text-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Pronto para levar seu e-commerce ao próximo nível?
+          </h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Entre em contato com nossos especialistas e descubra como a Weethub 
+            pode transformar seu negócio digital em uma história de sucesso.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800">
+              <Link to="/fale-conosco">
+                Fale com Nossos Especialistas
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white">
+              <Link to="/sobre-nos">
+                Conheça Nossa História
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Section */}
+      <section className="py-12 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-weethub-yellow">Endereço</h3>
+              <p className="text-gray-300">
+                Av. Cel. Júlio Ribeiro Gontijo, Nº 321<br />
+                Bairro Esplanada, Divinópolis - MG - Brasil
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4 text-weethub-yellow">CNPJ</h3>
+              <p className="text-gray-300">04.256.242/0001-00</p>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
