@@ -18,8 +18,9 @@ import {
   Rocket,
   Star
 } from 'lucide-react';
-import { GoogleGeminiEffectDemo } from '@/components/google-gemini-effect-demo';
 import { ModernEffectsDemo } from '@/components/modern-effects-demo';
+import { BackgroundLines } from '@/components/ui/background-lines';
+import { motion } from 'motion/react';
 
 const Index = () => {
   const services = [
@@ -65,18 +66,63 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section with Google Gemini Effect */}
-      <section className="bg-black text-white relative overflow-hidden">
-        <GoogleGeminiEffectDemo />
+      {/* Hero Section with Background Lines */}
+      <section className="relative min-h-screen bg-black text-white overflow-hidden">
+        <BackgroundLines className="h-screen" svgOptions={{ duration: 15 }}>
+          <div className="relative z-10 flex items-center justify-center h-full">
+            <div className="text-center px-4 max-w-6xl mx-auto">
+              <motion.h1 
+                className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow via-yellow-500 to-orange-400"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Excelência em E-commerce
+              </motion.h1>
+              <motion.p 
+                className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Transformamos lojas virtuais em máquinas de vendas com mais de 20 anos de experiência
+              </motion.p>
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <Button asChild size="lg" className="bg-weethub-yellow text-black hover:bg-yellow-500 text-lg px-8 py-6">
+                  <Link to="/fale-conosco">
+                    Começar Agora
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black text-lg px-8 py-6">
+                  <Link to="/sobre-nos">
+                    Conheça Nossa História
+                  </Link>
+                </Button>
+              </motion.div>
+            </div>
+          </div>
+        </BackgroundLines>
       </section>
 
       {/* Modern Effects Section */}
       <ModernEffectsDemo />
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
               Nossas Soluções Estratégicas
             </h2>
@@ -84,62 +130,90 @@ const Index = () => {
               Oferecemos soluções completas para transformar sua presença digital
               e gerar resultados excepcionais em projetos de alto valor.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-gray-800 border-gray-700 hover:border-weethub-yellow transition-all duration-300 group">
-                <CardHeader className="text-center">
-                  <div className="mx-auto mb-4 p-3 bg-weethub-yellow rounded-full w-fit group-hover:scale-110 transition-transform">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <CardDescription className="text-gray-300 mb-6">
-                    {service.description}
-                  </CardDescription>
-                  <Button asChild variant="outline" className="w-full border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black">
-                    <Link to={service.link}>
-                      Saiba Mais
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700 hover:border-weethub-yellow transition-all duration-300 group h-full">
+                  <CardHeader className="text-center">
+                    <div className="mx-auto mb-4 p-3 bg-gradient-to-r from-weethub-yellow to-yellow-500 rounded-full w-fit group-hover:scale-110 transition-transform">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <CardDescription className="text-gray-300 mb-6">
+                      {service.description}
+                    </CardDescription>
+                    <Button asChild variant="outline" className="w-full border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black">
+                      <Link to={service.link}>
+                        Saiba Mais
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Results Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section className="py-20 bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-weethub-yellow/5 to-transparent"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
               Resultados Comprovados
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Empresas que confiaram na Weethub alcançaram resultados significativos
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
             {results.map((result, index) => (
-              <div key={index} className="text-center p-6 bg-gray-900 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors">
+              <motion.div 
+                key={index} 
+                className="text-center p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors backdrop-blur-sm"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+              >
                 <div className="text-4xl font-bold text-weethub-yellow mb-2">{result.value}</div>
                 <div className="text-gray-300">{result.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
                 Metodologia Baseada em Dados e Performance
               </h2>
@@ -150,35 +224,60 @@ const Index = () => {
               </p>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                  <motion.div 
+                    key={index} 
+                    className="flex items-center space-x-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
                     <CheckCircle className="h-5 w-5 text-weethub-yellow flex-shrink-0" />
                     <span className="text-gray-300">{benefit}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-6 bg-black rounded-lg border border-gray-800">
+            </motion.div>
+            <motion.div 
+              className="grid grid-cols-2 gap-6"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <motion.div 
+                className="text-center p-6 bg-gradient-to-br from-black to-gray-900 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors"
+                whileHover={{ scale: 1.05 }}
+              >
                 <Award className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
                 <div className="text-2xl font-bold text-white">20+</div>
                 <div className="text-gray-400">Anos de Experiência</div>
-              </div>
-              <div className="text-center p-6 bg-black rounded-lg border border-gray-800">
+              </motion.div>
+              <motion.div 
+                className="text-center p-6 bg-gradient-to-br from-black to-gray-900 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors"
+                whileHover={{ scale: 1.05 }}
+              >
                 <Rocket className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
                 <div className="text-2xl font-bold text-white">500+</div>
                 <div className="text-gray-400">Projetos Entregues</div>
-              </div>
-              <div className="text-center p-6 bg-black rounded-lg border border-gray-800">
+              </motion.div>
+              <motion.div 
+                className="text-center p-6 bg-gradient-to-br from-black to-gray-900 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors"
+                whileHover={{ scale: 1.05 }}
+              >
                 <Users className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
                 <div className="text-2xl font-bold text-white">300+</div>
                 <div className="text-gray-400">Clientes Ativos</div>
-              </div>
-              <div className="text-center p-6 bg-black rounded-lg border border-gray-800">
+              </motion.div>
+              <motion.div 
+                className="text-center p-6 bg-gradient-to-br from-black to-gray-900 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors"
+                whileHover={{ scale: 1.05 }}
+              >
                 <Star className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
                 <div className="text-2xl font-bold text-white">98%</div>
                 <div className="text-gray-400">Satisfação</div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -186,46 +285,69 @@ const Index = () => {
       {/* Partners Section */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
-            Parcerias Estratégicas
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Somos parceiros das principais plataformas e ferramentas do mercado, 
-            garantindo soluções integradas e eficientes para o seu negócio
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+              Parcerias Estratégicas
+            </h2>
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+              Somos parceiros das principais plataformas e ferramentas do mercado, 
+              garantindo soluções integradas e eficientes para o seu negócio
+            </p>
+          </motion.div>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {partners.map((partner, index) => (
-              <div key={index} className="bg-gray-900 px-6 py-3 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors">
+              <motion.div 
+                key={index} 
+                className="bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-3 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors backdrop-blur-sm"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+              >
                 <span className="text-gray-300 font-medium">{partner}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-weethub-yellow to-yellow-600 text-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Pronto para levar seu e-commerce ao próximo nível?
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Entre em contato com nossos especialistas e descubra como a Weethub 
-            pode transformar seu negócio digital em uma história de sucesso.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800">
-              <Link to="/fale-conosco">
-                Fale com Nossos Especialistas
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white">
-              <Link to="/sobre-nos">
-                Conheça Nossa História
-              </Link>
-            </Button>
-          </div>
+      <section className="py-20 bg-gradient-to-r from-weethub-yellow to-yellow-600 text-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Pronto para levar seu e-commerce ao próximo nível?
+            </h2>
+            <p className="text-xl mb-8 max-w-3xl mx-auto">
+              Entre em contato com nossos especialistas e descubra como a Weethub 
+              pode transformar seu negócio digital em uma história de sucesso.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 text-lg px-8 py-6">
+                <Link to="/fale-conosco">
+                  Fale com Nossos Especialistas
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white text-lg px-8 py-6">
+                <Link to="/sobre-nos">
+                  Conheça Nossa História
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -233,17 +355,27 @@ const Index = () => {
       <section className="py-12 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-xl font-bold mb-4 text-weethub-yellow">Endereço</h3>
               <p className="text-gray-300">
                 Av. Cel. Júlio Ribeiro Gontijo, Nº 321<br />
                 Bairro Esplanada, Divinópolis - MG - Brasil
               </p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-xl font-bold mb-4 text-weethub-yellow">CNPJ</h3>
               <p className="text-gray-300">04.256.242/0001-00</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
