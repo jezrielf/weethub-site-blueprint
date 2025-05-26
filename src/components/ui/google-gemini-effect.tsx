@@ -17,10 +17,10 @@ export const GoogleGeminiEffect = ({
   return (
     <div className={`sticky top-80 ${className}`}>
       <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-weethub-yellow to-yellow-600">
-        {title || "Transforme seu negócio"}
+        {title || "Excelência em E-commerce"}
       </p>
       <p className="text-xs md:text-xl font-normal text-center text-gray-300 max-w-4xl mx-auto">
-        {description || "Soluções completas em e-commerce para empresas que buscam resultados excepcionais"}
+        {description || "Transformamos lojas virtuais em máquinas de vendas com mais de 20 anos de experiência"}
       </p>
       <div className="w-full h-[890px] -top-60 md:-top-40 flex items-center justify-center bg-red-transparent absolute ">
         <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block">
