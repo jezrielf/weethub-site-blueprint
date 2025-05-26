@@ -19,6 +19,7 @@ import {
   Star
 } from 'lucide-react';
 import { GoogleGeminiEffectDemo } from '@/components/google-gemini-effect-demo';
+import { ModernEffectsDemo } from '@/components/modern-effects-demo';
 
 const Index = () => {
   const services = [
@@ -68,6 +69,9 @@ const Index = () => {
       <section className="bg-black text-white relative overflow-hidden">
         <GoogleGeminiEffectDemo />
       </section>
+
+      {/* Modern Effects Section */}
+      <ModernEffectsDemo />
 
       {/* Services Section */}
       <section className="py-20 bg-gray-900 text-white">
