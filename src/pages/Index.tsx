@@ -1,46 +1,46 @@
-
 import React from 'react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { 
   ShoppingCart, 
   BarChart3, 
   Users, 
-  Zap, 
   CheckCircle, 
   ArrowRight,
   Target,
-  TrendingUp,
-  Globe,
   Award,
   Rocket,
   Star
 } from 'lucide-react';
-import { ModernEffectsDemo } from '@/components/modern-effects-demo';
 import { CasesSection } from '@/components/cases-section';
-import { BackgroundLines } from '@/components/ui/background-lines';
+import { Spotlight } from '@/components/ui/spotlight';
+import { FlipWords } from '@/components/ui/flip-words';
 import { motion } from 'motion/react';
+import HeroParallaxDemo from '@/components/hero-parallax-demo';
+import TestimonialsDemo from '@/components/testimonials-demo';
+import { SignupForm } from '@/components/ui/signup-form';
 
 const Index = () => {
+  const words = ["Excelência", "Inovação", "Performance", "Resultados"];
+
   const services = [
     {
       icon: <BarChart3 className="h-8 w-8" />,
       title: "Assessoria Completa",
-      description: "Analisamos cada aspecto do seu negócio online, identificando oportunidades de melhoria e implementando estratégias eficazes baseadas em estudos de mercado e análise de performance.",
+      description: "Analisamos cada aspecto do seu negócio online, identificando oportunidades de melhoria e implementando estratégias eficazes baseadas em estudos de mercado.",
       link: "/assessoria"
     },
     {
       icon: <ShoppingCart className="h-8 w-8" />,
-      title: "Lojas Virtuais Personalizadas",
-      description: "Desenvolvemos lojas virtuais otimizadas e prontas para vender, integradas com as melhores plataformas e servidores do país.",
+      title: "Lojas Virtuais Premium",
+      description: "Desenvolvemos lojas virtuais otimizadas e prontas para vender, integradas com as melhores plataformas do país.",
       link: "/loja-virtual"
     },
     {
       icon: <Target className="h-8 w-8" />,
-      title: "Consultoria de Vendas Online",
-      description: "Oferecemos consultoria especializada para aprimorar suas estratégias de vendas online com métodos validados no mercado digital.",
+      title: "Consultoria de Vendas",
+      description: "Oferecemos consultoria especializada para aprimorar suas estratégias de vendas online com métodos validados.",
       link: "/blog"
     }
   ];
@@ -61,58 +61,65 @@ const Index = () => {
     "Suporte completo do planejamento à execução"
   ];
 
-  const partners = [
-    "Nuvemshop", "Google Ads", "Facebook Ads", "RD Station", "Mailchimp"
-  ];
-
   return (
     <Layout>
-      {/* Hero Section with Background Lines */}
-      <section className="relative min-h-screen bg-black text-white overflow-hidden">
-        <BackgroundLines className="h-screen" svgOptions={{ duration: 15 }}>
-          <div className="relative z-10 flex items-center justify-center h-full">
-            <div className="text-center px-4 max-w-6xl mx-auto">
-              <motion.h1 
-                className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow via-yellow-500 to-orange-400"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                Excelência em E-commerce
-              </motion.h1>
-              <motion.p 
-                className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Transformamos lojas virtuais em máquinas de vendas com mais de 20 anos de experiência
-              </motion.p>
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <Button asChild size="lg" className="bg-weethub-yellow text-black hover:bg-yellow-500 text-lg px-8 py-6">
-                  <Link to="/fale-conosco">
-                    Começar Agora
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black text-lg px-8 py-6">
-                  <Link to="/sobre-nos">
-                    Conheça Nossa História
-                  </Link>
-                </Button>
-              </motion.div>
-            </div>
+      {/* Hero Section with Spotlight and FlipWords */}
+      <section className="relative min-h-screen bg-black/[0.96] text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <Spotlight
+          className="-top-40 left-0 md:-top-20 md:left-60"
+          fill="#FFD700"
+        />
+        
+        <div className="relative z-10 flex items-center justify-center min-h-screen">
+          <div className="text-center px-4 max-w-6xl mx-auto">
+            <motion.h1 
+              className="text-4xl md:text-7xl font-bold mb-6 text-white"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              Transformamos Negócios com{" "}
+              <FlipWords words={words} className="text-weethub-yellow" />
+            </motion.h1>
+            
+            <motion.p 
+              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Somos especialistas em e-commerce com mais de 20 anos de experiência, 
+              transformando lojas virtuais em máquinas de vendas com resultados comprovados.
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Button asChild size="lg" className="bg-weethub-yellow text-black hover:bg-yellow-500 text-lg px-8 py-6">
+                <Link to="/fale-conosco">
+                  Começar Agora
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black text-lg px-8 py-6">
+                <Link to="/sobre-nos">
+                  Conheça Nossa História
+                </Link>
+              </Button>
+            </motion.div>
           </div>
-        </BackgroundLines>
+        </div>
       </section>
 
-      {/* Modern Effects Section */}
-      <ModernEffectsDemo />
+      {/* Hero Parallax - Virtual Stores Showcase */}
+      <section className="bg-black">
+        <HeroParallaxDemo />
+      </section>
 
       {/* Cases Section */}
       <CasesSection />
@@ -286,72 +293,52 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
-              Parcerias Estratégicas
-            </h2>
-            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-              Somos parceiros das principais plataformas e ferramentas do mercado, 
-              garantindo soluções integradas e eficientes para o seu negócio
-            </p>
-          </motion.div>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {partners.map((partner, index) => (
-              <motion.div 
-                key={index} 
-                className="bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-3 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors backdrop-blur-sm"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <span className="text-gray-300 font-medium">{partner}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Testimonials Section */}
+      <TestimonialsDemo />
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-weethub-yellow to-yellow-600 text-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Pronto para levar seu e-commerce ao próximo nível?
-            </h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Entre em contato com nossos especialistas e descubra como a Weethub 
-              pode transformar seu negócio digital em uma história de sucesso.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 text-lg px-8 py-6">
-                <Link to="/fale-conosco">
-                  Fale com Nossos Especialistas
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-black text-black hover:bg-black hover:text-white text-lg px-8 py-6">
-                <Link to="/sobre-nos">
-                  Conheça Nossa História
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
+      {/* Contact Form Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+                Pronto para Transformar seu Negócio?
+              </h2>
+              <p className="text-lg text-gray-300 mb-8">
+                Entre em contato conosco e descubra como podemos levar seu e-commerce 
+                ao próximo nível com nossa metodologia comprovada e mais de 20 anos de experiência.
+              </p>
+              <div className="space-y-4">
+                {benefits.slice(0, 4).map((benefit, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="flex items-center space-x-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <CheckCircle className="h-5 w-5 text-weethub-yellow flex-shrink-0" />
+                    <span className="text-gray-300">{benefit}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <SignupForm />
+            </motion.div>
+          </div>
         </div>
       </section>
 
