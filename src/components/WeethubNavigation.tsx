@@ -3,13 +3,12 @@
 import { Navbar, NavBody, NavItems, MobileNav, NavbarLogo, NavbarButton, MobileNavHeader, MobileNavToggle, MobileNavMenu } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+
 export default function WeethubNavigation() {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   const navItems = [{
-    name: "Início",
-    link: "/"
-  }, {
     name: "Assessoria",
     link: "/assessoria"
   }, {
@@ -25,6 +24,7 @@ export default function WeethubNavigation() {
     name: "Blog",
     link: "/blog"
   }];
+
   return <Navbar>
       {/* Desktop Navigation */}
       <NavBody>
