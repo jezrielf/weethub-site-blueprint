@@ -108,7 +108,7 @@ const Index = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black text-lg px-8 py-6">
+                <Button asChild variant="outline" size="lg" className="border-weethub-yellow text-black hover:bg-weethub-yellow hover:text-black text-lg px-8 py-6">
                   <Link to="/sobre-nos">
                     Conheça Nossa História
                   </Link>
@@ -166,7 +166,7 @@ const Index = () => {
                     <CardDescription className="text-gray-300 mb-6">
                       {service.description}
                     </CardDescription>
-                    <Button asChild variant="outline" className="w-full border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black">
+                    <Button asChild variant="outline" className="w-full border-weethub-yellow text-black hover:bg-weethub-yellow hover:text-black">
                       <Link to={service.link}>
                         Saiba Mais
                         <ArrowRight className="ml-2 h-4 w-4" />
