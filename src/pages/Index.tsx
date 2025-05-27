@@ -330,9 +330,8 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
-                Pronto para Transformar seu Negócio?
-              </h2>
+              <h2 className="text-3xl md:text-4xl mb-6 bg-clip-text bg-gradient-to-r from-weethub-yellow to-yellow-600 text-[#ffd700] font-extrabold">Pronto para transformar
+seu negócio?</h2>
               <p className="text-lg text-gray-300 mb-8">
                 Entre em contato conosco e descubra como podemos levar seu e-commerce 
                 ao próximo nível com nossa metodologia comprovada e mais de 25 anos de experiência.
