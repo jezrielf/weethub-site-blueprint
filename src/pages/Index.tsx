@@ -83,7 +83,7 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                Transformamos Negócios com{" "}
+                Transformamos e-commerces com{" "}
                 <FlipWords words={words} className="text-weethub-yellow" />
               </motion.h1>
               
@@ -93,7 +93,7 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Somos especialistas em e-commerce com mais de 20 anos de experiência, 
+                Somos especialistas em e-commerce com mais de 25 anos de experiência, 
                 transformando lojas virtuais em máquinas de vendas com resultados comprovados.
               </motion.p>
               
@@ -105,13 +105,13 @@ const Index = () => {
               >
                 <Button asChild size="lg" className="bg-weethub-yellow text-black hover:bg-yellow-500 text-lg px-8 py-6">
                   <Link to="/fale-conosco">
-                    Começar Agora
+                    Acelerar meu E-commerce
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-weethub-yellow text-black hover:bg-weethub-yellow hover:text-black text-lg px-8 py-6">
-                  <Link to="/sobre-nos">
-                    Conheça Nossa História
+                  <Link to="/cases">
+                    Resultados da Weethub
                   </Link>
                 </Button>
               </motion.div>
@@ -268,15 +268,15 @@ const Index = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <Award className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
-                <div className="text-2xl font-bold text-white">20+</div>
-                <div className="text-gray-400">Anos de Experiência</div>
+                <div className="text-2xl font-bold text-white">Desde 2001</div>
+                <div className="text-gray-400">Transformando empresas em histórias de sucesso </div>
               </motion.div>
               <motion.div 
                 className="text-center p-6 bg-gradient-to-br from-black to-gray-900 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors"
                 whileHover={{ scale: 1.05 }}
               >
                 <Rocket className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
-                <div className="text-2xl font-bold text-white">500+</div>
+                <div className="text-2xl font-bold text-white">2000+</div>
                 <div className="text-gray-400">Projetos Entregues</div>
               </motion.div>
               <motion.div 
@@ -284,7 +284,7 @@ const Index = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <Users className="h-8 w-8 text-weethub-yellow mx-auto mb-3" />
-                <div className="text-2xl font-bold text-white">300+</div>
+                <div className="text-2xl font-bold text-white">500+</div>
                 <div className="text-gray-400">Clientes Ativos</div>
               </motion.div>
               <motion.div 
@@ -321,7 +321,7 @@ const Index = () => {
               </h2>
               <p className="text-lg text-gray-300 mb-8">
                 Entre em contato conosco e descubra como podemos levar seu e-commerce 
-                ao próximo nível com nossa metodologia comprovada e mais de 20 anos de experiência.
+                ao próximo nível com nossa metodologia comprovada e mais de 25 anos de experiência.
               </p>
               <div className="space-y-4">
                 {benefits.slice(0, 4).map((benefit, index) => (
@@ -365,7 +365,7 @@ const Index = () => {
               <h3 className="text-xl font-bold mb-4 text-weethub-yellow">Endereço</h3>
               <p className="text-gray-300">
                 Av. Cel. Júlio Ribeiro Gontijo, Nº 321<br />
-                Bairro Esplanada, Divinópolis - MG - Brasil
+                Bairro Esplanada, Divinópolis - MG
               </p>
             </motion.div>
             <motion.div
