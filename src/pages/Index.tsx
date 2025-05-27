@@ -14,7 +14,6 @@ import { SignupForm } from '@/components/ui/signup-form';
 import { BackgroundLines } from '@/components/ui/background-lines';
 import ClientsSection from '@/components/ClientsSection';
 import PartnersSection from '@/components/PartnersSection';
-
 const Index = () => {
   const words = ["Excelência", "Inovação", "Performance", "Resultados"];
   const services = [{
@@ -131,7 +130,7 @@ const Index = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text bg-gradient-to-r from-weethub-yellow to-yellow-600 text-[#ffd700]">
               Nossas Soluções Estratégicas
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
