@@ -14,6 +14,7 @@ import { SignupForm } from '@/components/ui/signup-form';
 import { BackgroundLines } from '@/components/ui/background-lines';
 import ClientsSection from '@/components/ClientsSection';
 import PartnersSection from '@/components/PartnersSection';
+
 const Index = () => {
   const words = ["Excelência", "Inovação", "Performance", "Resultados"];
   const services = [{
@@ -154,7 +155,7 @@ const Index = () => {
           }}>
                 <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700 hover:border-weethub-yellow transition-all duration-300 group h-full">
                   <CardHeader className="text-center">
-                    <div className="mx-auto mb-2 p-3 bg-gradient-to-r from-weethub-yellow to-yellow-200 rounded-full w-fit group-hover:scale-110 transition-transform">
+                    <div className="mx-auto mb-2 p-3 bg-weethub-yellow rounded-full w-fit group-hover:scale-110 transition-transform">
                       {service.icon}
                     </div>
                     <CardTitle className="text-xl font-bold text-white">{service.title}</CardTitle>
