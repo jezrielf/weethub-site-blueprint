@@ -194,7 +194,7 @@ const Index = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text bg-gradient-to-r from-weethub-yellow to-yellow-600 text-[#ffd700]">
               Resultados Comprovados
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
