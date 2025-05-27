@@ -8,6 +8,7 @@ import {
   useSpring,
   MotionValue,
 } from "motion/react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const HeroParallax = ({
   products,
@@ -18,6 +19,7 @@ export const HeroParallax = ({
     thumbnail: string;
   }[];
 }) => {
+  const isMobile = useIsMobile();
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
@@ -53,6 +55,106 @@ export const HeroParallax = ({
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+
+  // Mobile Layout
+  if (isMobile) {
+    return (
+      <div
+        ref={ref}
+        className="h-[150vh] py-20 overflow-hidden antialiased relative flex flex-col"
+      >
+        <Header />
+        <div className="px-4 max-w-md mx-auto">
+          {/* Featured Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <div className="h-64 w-full relative rounded-lg overflow-hidden group">
+              <img
+                src={products[0]?.thumbnail}
+                alt={products[0]?.title}
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <h3 className="text-white font-bold text-lg">{products[0]?.title}</h3>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Grid of smaller images - 3 rows */}
+          <div className="space-y-4">
+            {/* Row 1 */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex gap-2"
+            >
+              {products.slice(1, 4).map((product, idx) => (
+                <div key={idx} className="flex-1 h-20 relative rounded-md overflow-hidden group">
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Row 2 */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex gap-2"
+            >
+              {products.slice(4, 7).map((product, idx) => (
+                <div key={idx} className="flex-1 h-20 relative rounded-md overflow-hidden group">
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Row 3 */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex gap-2"
+            >
+              {products.slice(7, 10).map((product, idx) => (
+                <div key={idx} className="flex-1 h-20 relative rounded-md overflow-hidden group">
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop Layout (original)
   return (
     <div
       ref={ref}
@@ -101,12 +203,14 @@ export const HeroParallax = ({
 };
 
 export const Header = () => {
+  const isMobile = useIsMobile();
+  
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold text-white">
+    <div className={`max-w-7xl relative mx-auto ${isMobile ? 'py-10 px-4' : 'py-20 md:py-40 px-4'} w-full left-0 top-0`}>
+      <h1 className={`${isMobile ? 'text-3xl' : 'text-2xl md:text-7xl'} font-bold text-white`}>
         Lojas Virtuais de <br /> Alto Desempenho
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-gray-300">
+      <p className={`max-w-2xl ${isMobile ? 'text-base mt-4' : 'text-base md:text-xl mt-8'} text-gray-300`}>
         Desenvolvemos lojas virtuais que convertem visitantes em clientes. 
         Conheça alguns dos nossos projetos que transformaram negócios e geraram resultados excepcionais.
       </p>
