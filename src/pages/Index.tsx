@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -23,6 +22,8 @@ import HeroParallaxDemo from '@/components/hero-parallax-demo';
 import TestimonialsDemo from '@/components/testimonials-demo';
 import { SignupForm } from '@/components/ui/signup-form';
 import { BackgroundLines } from '@/components/ui/background-lines';
+import ClientsSection from '@/components/ClientsSection';
+import PartnersSection from '@/components/PartnersSection';
 
 const Index = () => {
   const words = ["Excelência", "Inovação", "Performance", "Resultados"];
@@ -180,6 +181,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Clients Section */}
+      <ClientsSection />
+
       {/* Results Section */}
       <section className="py-20 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-weethub-yellow/5 to-transparent"></div>
@@ -295,6 +299,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Partners Section */}
+      <PartnersSection />
 
       {/* Testimonials Section */}
       <TestimonialsDemo />

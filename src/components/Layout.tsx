@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Navigation from './Navigation';
+import WeethubNavigation from './WeethubNavigation';
 import Footer from './Footer';
 
 interface LayoutProps {
@@ -10,8 +10,8 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow">
+      <WeethubNavigation />
+      <main className="flex-grow pt-20">
         {children}
       </main>
       <Footer />
