@@ -1,17 +1,22 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import { InfiniteMovingLogos } from '@/components/ui/infinite-moving-logos';
 
 const ClientsSection = () => {
   const clients = [
-    { name: "TechCorp", logo: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=100&fit=crop" },
-    { name: "InnovaSoft", logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&fit=crop" },
-    { name: "DigitalPlus", logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=200&h=100&fit=crop" },
-    { name: "SmartSolutions", logo: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&h=100&fit=crop" },
-    { name: "CloudTech", logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=200&h=100&fit=crop" },
-    { name: "DataFlow", logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop" },
-    { name: "WebMaster", logo: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=200&h=100&fit=crop" },
-    { name: "NextGen", logo: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=200&h=100&fit=crop" },
+    { name: "TechCorp" },
+    { name: "InnovaSoft" },
+    { name: "DigitalPlus" },
+    { name: "SmartSolutions" },
+    { name: "CloudTech" },
+    { name: "DataFlow" },
+    { name: "WebMaster" },
+    { name: "NextGen" },
+    { name: "DevCorp" },
+    { name: "CodeBase" },
+    { name: "TechFlow" },
+    { name: "DigitalWorks" },
   ];
 
   return (
@@ -32,30 +37,20 @@ const ClientsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {clients.map((client, index) => (
-            <motion.div
-              key={index}
-              className="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-weethub-yellow/10 transition-all duration-300 group"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-3 bg-gray-200 rounded-lg flex items-center justify-center group-hover:bg-weethub-yellow/20 transition-colors">
-                  <span className="text-2xl font-bold text-gray-600 group-hover:text-weethub-yellow">
-                    {client.name.charAt(0)}
-                  </span>
-                </div>
-                <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                  {client.name}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <InfiniteMovingLogos
+            items={clients}
+            direction="left"
+            speed="normal"
+            pauseOnHover={true}
+            className="py-4"
+          />
+        </motion.div>
 
         <motion.div 
           className="text-center mt-12"
@@ -65,7 +60,7 @@ const ClientsSection = () => {
           viewport={{ once: true }}
         >
           <p className="text-gray-600">
-            + de <span className="font-bold text-weethub-yellow">300 clientes</span> ativos 
+            + de <span className="font-bold text-weethub-yellow">500 clientes</span> ativos 
             em diversos segmentos de mercado
           </p>
         </motion.div>
