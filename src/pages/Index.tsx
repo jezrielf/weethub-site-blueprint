@@ -239,7 +239,7 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-weethub-yellow to-yellow-600">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text bg-gradient-to-r from-weethub-yellow to-yellow-600 text-[#ffd700]">
                 Metodologia Baseada em Dados e Performance
               </h2>
               <p className="text-lg text-gray-300 mb-8">
