@@ -3,6 +3,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const InfiniteMovingLogos = ({
   items,
@@ -22,6 +23,7 @@ export const InfiniteMovingLogos = ({
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     addAnimation();
@@ -85,24 +87,40 @@ export const InfiniteMovingLogos = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-8 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap py-4",
+          isMobile ? "gap-4" : "gap-8",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         {items.map((item, idx) => (
           <li
-            className="relative w-[200px] max-w-full shrink-0 flex items-center justify-center"
+            className={cn(
+              "relative max-w-full shrink-0 flex items-center justify-center",
+              isMobile ? "w-[140px]" : "w-[200px]"
+            )}
             key={`${item.name}-${idx}`}
           >
-            <div className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100 hover:border-weethub-yellow/50 w-full h-24">
+            <div className={cn(
+              "flex items-center justify-center bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100 hover:border-weethub-yellow/50 w-full",
+              isMobile ? "p-3 h-16" : "p-6 h-24"
+            )}>
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-weethub-yellow/10 to-weethub-yellow/20 rounded-xl flex items-center justify-center group-hover:from-weethub-yellow/20 group-hover:to-weethub-yellow/30 transition-all">
-                  <span className="text-2xl font-bold text-weethub-yellow">
+                <div className={cn(
+                  "mx-auto mb-1 bg-gradient-to-br from-weethub-yellow/10 to-weethub-yellow/20 rounded-xl flex items-center justify-center group-hover:from-weethub-yellow/20 group-hover:to-weethub-yellow/30 transition-all",
+                  isMobile ? "w-8 h-8" : "w-16 h-16"
+                )}>
+                  <span className={cn(
+                    "font-bold text-weethub-yellow",
+                    isMobile ? "text-sm" : "text-2xl"
+                  )}>
                     {item.name.charAt(0)}
                   </span>
                 </div>
-                <span className="text-xs font-medium text-gray-700 group-hover:text-weethub-yellow transition-colors">
+                <span className={cn(
+                  "font-medium text-gray-700 group-hover:text-weethub-yellow transition-colors",
+                  isMobile ? "text-xs" : "text-xs"
+                )}>
                   {item.name}
                 </span>
               </div>

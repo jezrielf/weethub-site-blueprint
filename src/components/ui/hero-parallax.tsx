@@ -64,13 +64,13 @@ export const HeroParallax = ({
         className="h-[150vh] py-20 overflow-hidden antialiased relative flex flex-col"
       >
         <Header />
-        <div className="px-4 max-w-md mx-auto">
+        <div className="px-4 max-w-full mx-auto overflow-x-hidden">
           {/* Featured Image */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8"
+            className="mb-8 max-w-sm mx-auto"
           >
             <div className="h-64 w-full relative rounded-lg overflow-hidden group">
               <img
@@ -85,7 +85,7 @@ export const HeroParallax = ({
           </motion.div>
 
           {/* Grid of smaller images - 3 rows */}
-          <div className="space-y-4">
+          <div className="space-y-3 max-w-sm mx-auto">
             {/* Row 1 */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
