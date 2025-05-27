@@ -236,10 +236,13 @@ export const NavbarLogo = () => {
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <div className="w-8 h-8 bg-weethub-yellow rounded-md flex items-center justify-center">
-        <span className="text-black font-bold text-sm">W</span>
-      </div>
-      <span className="font-bold text-xl text-black">weethub</span>
+      <img
+        src="https://weethub.com/wp-content/themes/weethub/img/logo-topo.png"
+        alt="Weethub Logo"
+        width={120}
+        height={40}
+        className="h-10 w-auto"
+      />
     </a>
   );
 };
