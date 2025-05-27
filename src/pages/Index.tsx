@@ -22,6 +22,7 @@ import { motion } from 'motion/react';
 import HeroParallaxDemo from '@/components/hero-parallax-demo';
 import TestimonialsDemo from '@/components/testimonials-demo';
 import { SignupForm } from '@/components/ui/signup-form';
+import { BackgroundLines } from '@/components/ui/background-lines';
 
 const Index = () => {
   const words = ["Excelência", "Inovação", "Performance", "Resultados"];
@@ -65,57 +66,57 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section with Spotlight and FlipWords */}
-      <section className="relative min-h-screen bg-black/[0.96] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-        
-        <Spotlight
-          className="-top-40 left-0 md:-top-20 md:left-60"
-          fill="#FFD700"
-        />
-        
-        <div className="relative z-10 flex items-center justify-center min-h-screen">
-          <div className="text-center px-4 max-w-6xl mx-auto">
-            <motion.h1 
-              className="text-4xl md:text-7xl font-bold mb-6 text-white"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Transformamos Negócios com{" "}
-              <FlipWords words={words} className="text-weethub-yellow" />
-            </motion.h1>
-            
-            <motion.p 
-              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Somos especialistas em e-commerce com mais de 20 anos de experiência, 
-              transformando lojas virtuais em máquinas de vendas com resultados comprovados.
-            </motion.p>
-            
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <Button asChild size="lg" className="bg-weethub-yellow text-black hover:bg-yellow-500 text-lg px-8 py-6">
-                <Link to="/fale-conosco">
-                  Começar Agora
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black text-lg px-8 py-6">
-                <Link to="/sobre-nos">
-                  Conheça Nossa História
-                </Link>
-              </Button>
-            </motion.div>
+      {/* Hero Section with BackgroundLines, Spotlight and FlipWords */}
+      <section className="relative min-h-screen overflow-hidden">
+        <BackgroundLines className="min-h-screen bg-black/[0.96] text-white">
+          <Spotlight
+            className="-top-40 left-0 md:-top-20 md:left-60"
+            fill="#FFD700"
+          />
+          
+          <div className="relative z-10 flex items-center justify-center min-h-screen">
+            <div className="text-center px-4 max-w-6xl mx-auto">
+              <motion.h1 
+                className="text-4xl md:text-7xl font-bold mb-6 text-white"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Transformamos Negócios com{" "}
+                <FlipWords words={words} className="text-weethub-yellow" />
+              </motion.h1>
+              
+              <motion.p 
+                className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Somos especialistas em e-commerce com mais de 20 anos de experiência, 
+                transformando lojas virtuais em máquinas de vendas com resultados comprovados.
+              </motion.p>
+              
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <Button asChild size="lg" className="bg-weethub-yellow text-black hover:bg-yellow-500 text-lg px-8 py-6">
+                  <Link to="/fale-conosco">
+                    Começar Agora
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-weethub-yellow text-weethub-yellow hover:bg-weethub-yellow hover:text-black text-lg px-8 py-6">
+                  <Link to="/sobre-nos">
+                    Conheça Nossa História
+                  </Link>
+                </Button>
+              </motion.div>
+            </div>
           </div>
-        </div>
+        </BackgroundLines>
       </section>
 
       {/* Hero Parallax - Virtual Stores Showcase */}
