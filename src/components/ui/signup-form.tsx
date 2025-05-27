@@ -104,7 +104,7 @@ export const SignupForm = () => {
         delay: 0.3
       }}>
           <LabelInputContainer>
-            <ModernLabel htmlFor="company">Empresa</ModernLabel>
+            <ModernLabel htmlFor="company">Instagram</ModernLabel>
             <ModernInput id="company" placeholder="Nome da sua empresa" type="text" />
           </LabelInputContainer>
         </motion.div>
