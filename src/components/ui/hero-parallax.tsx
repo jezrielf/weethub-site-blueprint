@@ -73,7 +73,7 @@ export const HeroParallax = ({
   }
 
   // Desktop Layout with fixed 525x350 aspect ratio
-  return <div ref={ref} className="h-[230vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
+  return <div ref={ref} className="h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
       <Header />
       <motion.div style={{
       rotateX,
