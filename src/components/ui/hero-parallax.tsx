@@ -9,6 +9,13 @@ import {
   MotionValue,
 } from "motion/react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const HeroParallax = ({
   products,
@@ -56,7 +63,7 @@ export const HeroParallax = ({
     springConfig
   );
 
-  // Mobile Layout
+  // Mobile Layout with Carousel
   if (isMobile) {
     return (
       <div
@@ -64,101 +71,56 @@ export const HeroParallax = ({
         className="h-[150vh] py-20 overflow-hidden antialiased relative flex flex-col"
       >
         <Header />
-        <div className="px-4 max-w-full mx-auto overflow-x-hidden">
-          {/* Featured Image */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 max-w-sm mx-auto"
+        <div className="px-4 max-w-full mx-auto">
+          {/* Carousel for all images */}
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-xs mx-auto"
           >
-            <div className="w-full relative rounded-lg overflow-hidden group bg-gray-100">
-              <img
-                src={products[0]?.thumbnail}
-                alt={products[0]?.title}
-                className="object-contain w-full h-auto max-h-64 mx-auto group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
+            <CarouselContent>
+              {products.map((product, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-2">
+                    <div 
+                      className="relative rounded-lg overflow-hidden group bg-gray-100"
+                      style={{ aspectRatio: '525/350' }}
+                    >
+                      <img
+                        src={product.thumbnail}
+                        alt={product.title}
+                        className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <h3 className="text-white font-bold text-base leading-tight">{product.title}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
+          
+          {/* Carousel indicators */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {products.slice(0, 5).map((_, index) => (
+              <div
+                key={index}
+                className="w-2 h-2 rounded-full bg-gray-400"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <h3 className="text-white font-bold text-lg">{products[0]?.title}</h3>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Grid of smaller images - 3 rows */}
-          <div className="space-y-3 max-w-sm mx-auto">
-            {/* Row 1 */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex gap-2"
-            >
-              {products.slice(1, 4).map((product, idx) => (
-                <div key={idx} className="flex-1 relative rounded-md overflow-hidden group bg-gray-100 min-h-[80px]">
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    className="object-contain w-full h-auto max-h-20 mx-auto group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Row 2 */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex gap-2"
-            >
-              {products.slice(4, 7).map((product, idx) => (
-                <div key={idx} className="flex-1 relative rounded-md overflow-hidden group bg-gray-100 min-h-[80px]">
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    className="object-contain w-full h-auto max-h-20 mx-auto group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Row 3 */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex gap-2"
-            >
-              {products.slice(7, 10).map((product, idx) => (
-                <div key={idx} className="flex-1 relative rounded-md overflow-hidden group bg-gray-100 min-h-[80px]">
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    className="object-contain w-full h-auto max-h-20 mx-auto group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+            ))}
           </div>
         </div>
       </div>
     );
   }
 
-  // Desktop Layout (original)
+  // Desktop Layout with fixed 525x350 aspect ratio
   return (
     <div
       ref={ref}
@@ -244,11 +206,17 @@ export const ProductCard = ({
       key={product.title}
       className="group/product relative shrink-0 bg-gray-100 rounded-lg overflow-hidden"
     >
-      <div className="block group-hover/product:shadow-2xl w-[30rem] min-h-[24rem] flex items-center justify-center">
+      <div 
+        className="block group-hover/product:shadow-2xl flex items-center justify-center"
+        style={{ 
+          width: '525px', 
+          height: '350px'
+        }}
+      >
         <img
           src={product.thumbnail}
           alt={product.title}
-          className="object-contain w-full h-auto max-h-96 rounded-lg"
+          className="object-contain w-full h-full rounded-lg"
           loading="lazy"
         />
       </div>
