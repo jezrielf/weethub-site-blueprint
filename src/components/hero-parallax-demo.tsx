@@ -1,3 +1,6 @@
+
+import { HeroParallax } from "./ui/hero-parallax";
+
 export const products = [
   {
     title: "TAINÁ COSTA",
@@ -126,3 +129,8 @@ export const products = [
   },
 ];
 
+const HeroParallaxDemo = () => {
+  return <HeroParallax products={products} />;
+};
+
+export default HeroParallaxDemo;
