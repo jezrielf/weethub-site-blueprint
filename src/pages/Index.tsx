@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -123,9 +124,9 @@ const Index = () => {
         </div>
 
         {/* Services Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
+        <section className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div className="text-center mb-16" initial={{
+            <motion.div className="text-center mb-12" initial={{
             opacity: 0,
             y: 50
           }} whileInView={{
@@ -188,10 +189,10 @@ const Index = () => {
         </div>
 
         {/* Results Section */}
-        <section className="py-20 bg-black text-white relative overflow-hidden">
+        <section className="py-12 bg-black text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-weethub-yellow/5 to-transparent"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <motion.div className="text-center mb-16" initial={{
+            <motion.div className="text-center mb-12" initial={{
             opacity: 0,
             y: 50
           }} whileInView={{
@@ -210,7 +211,7 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
               {results.map((result, index) => <motion.div key={index} className="text-center p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg border border-gray-800 hover:border-weethub-yellow transition-colors backdrop-blur-sm" initial={{
               opacity: 0,
               scale: 0.8
@@ -233,7 +234,7 @@ const Index = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
+        <section className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div initial={{
@@ -328,7 +329,7 @@ const Index = () => {
         </div>
 
         {/* Contact Form Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
+        <section className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div initial={{
@@ -385,7 +386,7 @@ seu negócio?</h2>
         </section>
 
         {/* Contact Info Section */}
-        <section className="py-12 bg-gray-900 text-white overflow-x-hidden">
+        <section className="py-8 bg-gray-900 text-white overflow-x-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <motion.div initial={{
