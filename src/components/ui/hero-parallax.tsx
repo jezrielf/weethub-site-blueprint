@@ -72,11 +72,12 @@ export const HeroParallax = ({
             transition={{ duration: 0.6 }}
             className="mb-8 max-w-sm mx-auto"
           >
-            <div className="h-64 w-full relative rounded-lg overflow-hidden group">
+            <div className="w-full relative rounded-lg overflow-hidden group bg-gray-100">
               <img
                 src={products[0]?.thumbnail}
                 alt={products[0]?.title}
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                className="object-contain w-full h-auto max-h-64 mx-auto group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <h3 className="text-white font-bold text-lg">{products[0]?.title}</h3>
@@ -94,11 +95,12 @@ export const HeroParallax = ({
               className="flex gap-2"
             >
               {products.slice(1, 4).map((product, idx) => (
-                <div key={idx} className="flex-1 h-20 relative rounded-md overflow-hidden group">
+                <div key={idx} className="flex-1 relative rounded-md overflow-hidden group bg-gray-100 min-h-[80px]">
                   <img
                     src={product.thumbnail}
                     alt={product.title}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain w-full h-auto max-h-20 mx-auto group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
@@ -115,11 +117,12 @@ export const HeroParallax = ({
               className="flex gap-2"
             >
               {products.slice(4, 7).map((product, idx) => (
-                <div key={idx} className="flex-1 h-20 relative rounded-md overflow-hidden group">
+                <div key={idx} className="flex-1 relative rounded-md overflow-hidden group bg-gray-100 min-h-[80px]">
                   <img
                     src={product.thumbnail}
                     alt={product.title}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain w-full h-auto max-h-20 mx-auto group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
@@ -136,11 +139,12 @@ export const HeroParallax = ({
               className="flex gap-2"
             >
               {products.slice(7, 10).map((product, idx) => (
-                <div key={idx} className="flex-1 h-20 relative rounded-md overflow-hidden group">
+                <div key={idx} className="flex-1 relative rounded-md overflow-hidden group bg-gray-100 min-h-[80px]">
                   <img
                     src={product.thumbnail}
                     alt={product.title}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain w-full h-auto max-h-20 mx-auto group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white text-xs font-medium text-center px-1">{product.title}</span>
@@ -238,15 +242,14 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product relative shrink-0 bg-gray-100 rounded-lg overflow-hidden"
     >
-      <div className="block group-hover/product:shadow-2xl">
+      <div className="block group-hover/product:shadow-2xl w-[30rem] min-h-[24rem] flex items-center justify-center">
         <img
           src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0 rounded-lg"
           alt={product.title}
+          className="object-contain w-full h-auto max-h-96 rounded-lg"
+          loading="lazy"
         />
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-lg"></div>
