@@ -1,73 +1,195 @@
-# Welcome to your Lovable project
 
-## Project info
+# Weethub - Website Estático
 
-**URL**: https://lovable.dev/projects/558485a5-ee07-4feb-896b-067b1dfe0796
+Este é um website estático criado em HTML, CSS e JavaScript puro, reproduzindo fielmente a homepage da Weethub com todos os efeitos visuais e interatividade.
 
-## How can I edit this code?
+## 📁 Estrutura dos Arquivos
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/558485a5-ee07-4feb-896b-067b1dfe0796) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+/
+├── index.html          # Página principal
+├── styles.css          # Todos os estilos e animações
+├── script.js          # Funcionalidades JavaScript
+└── README.md          # Este arquivo
 ```
 
-**Edit a file directly in GitHub**
+## ✨ Funcionalidades Implementadas
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 🎨 Design e Layout
+- **Design responsivo** para desktop, tablet e mobile
+- **Cores da marca Weethub** (#FFD700 - dourado)
+- **Tipografia Inter** via Google Fonts
+- **Layout moderno** com gradientes e efeitos glassmorphism
 
-**Use GitHub Codespaces**
+### 🚀 Efeitos Visuais
+- **Background Lines animadas** na seção hero
+- **Spotlight effect** com animação CSS
+- **Parallax scrolling** na seção de showcase de lojas virtuais
+- **Flip Words** - animação de palavras alternadas
+- **Fade in animations** em elementos durante o scroll
+- **Hover effects** em cards e botões
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 📱 Navegação
+- **Menu responsivo** com versão mobile
+- **Navegação smooth scroll** entre seções
+- **Header fixo** com efeito de transparência no scroll
+- **Indicadores visuais** para seção ativa
 
-## What technologies are used for this project?
+### 🖼️ Showcase de Lojas Virtuais
+- **Desktop**: Três linhas com efeito parallax
+- **Mobile**: Carrossel touch-friendly com indicadores
+- **Lazy loading** das imagens para performance
+- **Efeitos hover** com overlay de informações
 
-This project is built with:
+### 📋 Formulário de Contato
+- **Validação** de campos obrigatórios
+- **Validação de email** com regex
+- **Feedback visual** durante envio
+- **Design acessível** com labels apropriadas
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### ⚡ Performance
+- **CSS e JavaScript otimizados** para carregamento rápido
+- **Lazy loading** de imagens
+- **Throttling** de eventos de scroll
+- **Animações suaves** com requestAnimationFrame
 
-## How can I deploy this project?
+## 🚀 Como Usar
 
-Simply open [Lovable](https://lovable.dev/projects/558485a5-ee07-4feb-896b-067b1dfe0796) and click on Share -> Publish.
+### 1. Hospedagem Simples
+Faça upload dos arquivos para qualquer servidor web:
+- **GitHub Pages**
+- **Netlify**
+- **Vercel**
+- **Servidor Apache/Nginx**
 
-## Can I connect a custom domain to my Lovable project?
+### 2. Visualização Local
+Abra o arquivo `index.html` diretamente no navegador ou use um servidor local:
 
-Yes, you can!
+```bash
+# Python 3
+python -m http.server 8000
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Python 2
+python -m SimpleHTTPServer 8000
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Node.js (com http-server)
+npx http-server
+
+# PHP
+php -S localhost:8000
+```
+
+### 3. Customização
+
+#### Alterar Cores da Marca
+No arquivo `styles.css`, modifique as variáveis CSS:
+```css
+:root {
+    --weethub-yellow: #FFD700;  /* Cor principal */
+    --weethub-yellow-dark: #E6C200;  /* Cor mais escura */
+}
+```
+
+#### Modificar Conteúdo
+Edite diretamente o arquivo `index.html` para:
+- Alterar textos e títulos
+- Adicionar/remover seções
+- Modificar informações de contato
+- Atualizar links e URLs
+
+#### Personalizar Animações
+No arquivo `script.js`, você pode ajustar:
+- Velocidade das animações
+- Timing dos efeitos
+- Comportamento do carrossel
+- Configurações do parallax
+
+## 🎯 Seções Incluídas
+
+1. **Hero Section** - Título principal com efeitos visuais
+2. **Hero Parallax** - Showcase das lojas virtuais
+3. **Services** - Serviços oferecidos
+4. **Results** - Resultados e métricas
+5. **Contact** - Formulário de contato
+6. **Footer** - Informações da empresa
+
+## 📱 Responsividade
+
+O site é totalmente responsivo com breakpoints em:
+- **Desktop**: > 768px
+- **Tablet**: 768px - 480px  
+- **Mobile**: < 480px
+
+### Adaptações Mobile
+- Menu hambúrguer
+- Carrossel em vez de parallax
+- Layout em coluna única
+- Botões e textos otimizados para touch
+
+## 🌐 Compatibilidade
+
+- **Chrome** 60+
+- **Firefox** 60+
+- **Safari** 12+
+- **Edge** 79+
+- **Mobile browsers** (iOS Safari, Chrome Mobile)
+
+## 📧 Configuração do Formulário
+
+O formulário atualmente simula o envio. Para integrar com um backend real:
+
+1. **Modificar action** no HTML:
+```html
+<form class="contact-form" action="https://seu-backend.com/contact" method="POST">
+```
+
+2. **Ou usar serviços** como:
+   - Formspree
+   - Netlify Forms
+   - EmailJS
+   - Google Forms
+
+## 🔧 Manutenção
+
+### Atualizar Imagens
+Substitua as URLs das imagens no HTML pelas suas próprias:
+```html
+<img src="https://sua-cdn.com/imagem.jpg" alt="Descrição">
+```
+
+### Adicionar Analytics
+Inclua o código do Google Analytics no `<head>`:
+```html
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+```
+
+### SEO Optimization
+- Personalize meta tags no `<head>`
+- Adicione structured data
+- Configure robots.txt
+- Implemente sitemap.xml
+
+## 🚀 Deploy Recomendado
+
+### Netlify (Recomendado)
+1. Faça upload dos arquivos via drag & drop
+2. Configure domínio personalizado
+3. SSL automático incluído
+
+### GitHub Pages
+1. Crie repositório no GitHub
+2. Faça upload dos arquivos
+3. Ative GitHub Pages nas configurações
+
+## 📞 Suporte
+
+Para dúvidas ou customizações:
+- 📧 Email: contato@weethub.com
+- 🌐 Website: https://weethub.com
+
+---
+
+**Desenvolvido com ❤️ para a Weethub**
+
+*Este website estático mantém toda a funcionalidade e design da versão React original, otimizado para performance e compatibilidade máxima.*
