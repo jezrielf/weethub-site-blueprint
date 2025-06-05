@@ -3,17 +3,19 @@
 let currentSlide = 0;
 let flipWordsIndex = 0;
 let isScrolling = false;
+let isParallaxActive = true;
 
-// Words for flip animation
+// Words for flip animation - Exato da versão React
 const flipWords = ['Excelência', 'Inovação', 'Performance', 'Resultados'];
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Iniciando Weethub Website...');
     initializeApp();
 });
 
 function initializeApp() {
-    // Initialize all components
+    // Initialize all components in correct order
     initializeMobileMenu();
     initializeFlipWords();
     initializeParallaxEffect();
@@ -22,17 +24,30 @@ function initializeApp() {
     initializeInfiniteScroll();
     initializeContactForm();
     initializeSmoothScrolling();
+    initializeBackgroundLines();
     
-    // Set up scroll listener for parallax
-    window.addEventListener('scroll', handleScroll);
+    // Set up event listeners
+    window.addEventListener('scroll', throttle(handleScroll, 16));
+    window.addEventListener('resize', throttle(handleResize, 100));
     
-    // Set up resize listener
-    window.addEventListener('resize', handleResize);
-    
-    console.log('Weethub website initialized successfully!');
+    // Page loaded indicator
+    console.log('✅ Weethub website 100% carregado!');
 }
 
-// Mobile Menu
+// Throttle function for performance optimization
+function throttle(func, wait) {
+    let timeout = null;
+    return function() {
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                func.call();
+                timeout = null;
+            }, wait);
+        }
+    };
+}
+
+// Mobile Menu - Implementação correta
 function initializeMobileMenu() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileOverlay = document.getElementById('mobile-menu-overlay');
@@ -52,6 +67,13 @@ function initializeMobileMenu() {
                 closeMobileMenu();
             }
         });
+        
+        // Close menu on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
     }
 }
 
@@ -64,6 +86,9 @@ function toggleMobileMenu() {
     
     // Prevent body scroll when menu is open
     document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    
+    // Accessibility
+    overlay.setAttribute('aria-expanded', overlay.classList.contains('active'));
 }
 
 function closeMobileMenu() {
@@ -73,9 +98,12 @@ function closeMobileMenu() {
     toggle.classList.remove('active');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
+    
+    // Accessibility
+    overlay.setAttribute('aria-expanded', 'false');
 }
 
-// Flip Words Animation
+// Flip Words Animation - Animação exata do React
 function initializeFlipWords() {
     const flipElement = document.getElementById('flip-words');
     if (!flipElement) return;
@@ -93,9 +121,23 @@ function initializeFlipWords() {
     }, 3000);
 }
 
-// Parallax Effect
+// Background Lines SVG Animation
+function initializeBackgroundLines() {
+    console.log('🎨 Inicializando animações SVG...');
+    
+    // SVG paths are already in HTML, this just ensures
+    // they are properly initialized for animation
+    const svgLines = document.querySelectorAll('.bg-line');
+    if (svgLines.length > 0) {
+        console.log(`✅ ${svgLines.length} linhas SVG animadas inicializadas`);
+    }
+}
+
+// Parallax Effect - Implementação exata
 function initializeParallaxEffect() {
-    // This will be handled in the scroll event
+    // Set up initial parallax state
+    updateParallaxEffect();
+    console.log('✨ Efeito parallax inicializado');
 }
 
 function handleScroll() {
@@ -110,89 +152,162 @@ function handleScroll() {
 }
 
 function updateParallaxEffect() {
-    const heroParallax = document.getElementById('hero-parallax');
-    if (!heroParallax) return;
+    // Only run if parallax should be active (desktop only)
+    if (!isParallaxActive || window.innerWidth <= 768) return;
     
     const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
     
-    // Update parallax rows if on desktop
+    // Update parallax rows - Movimento preciso 3 linhas
     const parallaxRows = document.querySelectorAll('.parallax-row');
     parallaxRows.forEach((row, index) => {
-        const speed = (index % 2 === 0) ? 0.5 : -0.5;
-        const yPos = -(scrolled * speed);
-        row.style.transform = `translateY(${yPos}px)`;
+        // Different speeds for different rows
+        const speeds = [0.15, -0.1, 0.05];
+        const speed = speeds[index % speeds.length];
+        const yPos = scrolled * speed;
+        const xPos = parseFloat(row.dataset.xPos || 0);
+        
+        // Apply transform considering both scroll position and animation position
+        row.style.transform = `translateX(${xPos}px) translateY(${yPos}px)`;
     });
+    
+    // Spotlight parallax effect
+    const spotlight = document.querySelector('.spotlight');
+    if (spotlight) {
+        const spotlightSpeed = -0.2;
+        const spotlightY = scrolled * spotlightSpeed;
+        spotlight.style.transform = `translateY(${spotlightY}px)`;
+    }
 }
 
-// Carousel for Mobile
+// Carousel for Mobile - Mobile Carousel Funcional
 function initializeCarousel() {
     const track = document.getElementById('carousel-track');
     const prevBtn = document.getElementById('carousel-prev');
     const nextBtn = document.getElementById('carousel-next');
     const indicators = document.getElementById('carousel-indicators');
     
-    if (!track || !prevBtn || !nextBtn) return;
+    if (!track || !prevBtn || !nextBtn || !indicators) return;
     
     const slides = track.children;
     const totalSlides = slides.length;
     
+    // Ensure indicators match slides
+    while (indicators.children.length < totalSlides) {
+        const dot = document.createElement('div');
+        dot.className = 'indicator';
+        if (indicators.children.length === 0) {
+            dot.classList.add('active');
+        }
+        indicators.appendChild(dot);
+    }
+    
+    // Set up event listeners
     prevBtn.addEventListener('click', () => moveSlide(-1));
     nextBtn.addEventListener('click', () => moveSlide(1));
     
     // Add click events to indicators
-    if (indicators) {
-        const indicatorElements = indicators.children;
-        Array.from(indicatorElements).forEach((indicator, index) => {
-            indicator.addEventListener('click', () => goToSlide(index));
-        });
-    }
+    Array.from(indicators.children).forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index));
+    });
     
     function moveSlide(direction) {
-        currentSlide += direction;
-        
-        if (currentSlide >= totalSlides) {
-            currentSlide = 0;
-        } else if (currentSlide < 0) {
-            currentSlide = totalSlides - 1;
-        }
-        
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
         updateCarousel();
     }
     
     function goToSlide(index) {
-        currentSlide = index;
-        updateCarousel();
+        if (index >= 0 && index < totalSlides) {
+            currentSlide = index;
+            updateCarousel();
+        }
     }
     
     function updateCarousel() {
+        // Smooth animation
         const translateX = -currentSlide * 100;
+        track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         track.style.transform = `translateX(${translateX}%)`;
         
         // Update indicators
-        if (indicators) {
-            const indicatorElements = indicators.children;
-            Array.from(indicatorElements).forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentSlide);
-            });
+        Array.from(indicators.children).forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    // Auto-play on mobile only
+    let autoplayInterval = null;
+    
+    function setupAutoplay() {
+        if (window.innerWidth <= 768) {
+            if (!autoplayInterval) {
+                autoplayInterval = setInterval(() => moveSlide(1), 5000);
+            }
+        } else if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
         }
     }
     
-    // Auto-play carousel
-    setInterval(() => {
-        if (window.innerWidth <= 768) { // Only on mobile
-            moveSlide(1);
+    // Initialize autoplay
+    setupAutoplay();
+    
+    // Update autoplay on window resize
+    window.addEventListener('resize', setupAutoplay);
+    
+    // Pause on hover
+    track.addEventListener('mouseenter', () => {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
         }
-    }, 5000);
+    });
+    
+    track.addEventListener('mouseleave', () => {
+        if (window.innerWidth <= 768) {
+            autoplayInterval = setInterval(() => moveSlide(1), 5000);
+        }
+    });
+    
+    // Touch support for carousel
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left, go to next slide
+            moveSlide(1);
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right, go to previous slide
+            moveSlide(-1);
+        }
+    }
 }
 
-// Scroll Animations
+// Scroll Animations - Animações exatas do React
 function initializeScrollAnimations() {
     const animateElements = document.querySelectorAll('.case-card, .service-card, .result-card, .stat-card, .benefit-item');
     
     animateElements.forEach(element => {
         element.classList.add('animate-on-scroll');
     });
+    
+    // Initial check for elements in viewport
+    updateScrollAnimations();
+    
+    // Use Intersection Observer if available
+    if ('IntersectionObserver' in window) {
+        initializeIntersectionObserver();
+    }
 }
 
 function updateScrollAnimations() {
@@ -200,7 +315,7 @@ function updateScrollAnimations() {
     
     animateElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
+        const elementVisible = window.innerHeight * 0.15;
         
         if (elementTop < window.innerHeight - elementVisible) {
             element.classList.add('in-view');
@@ -218,12 +333,14 @@ function initializeInfiniteScroll() {
         
         // Clone items for seamless loop
         const items = Array.from(track.children);
-        items.forEach(item => {
-            const clone = item.cloneNode(true);
-            track.appendChild(clone);
-        });
+        if (items.length > 0) {
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                track.appendChild(clone);
+            });
+        }
         
-        // Pause on hover
+        // Pause on hover for better UX
         container.addEventListener('mouseenter', () => {
             track.style.animationPlayState = 'paused';
         });
@@ -234,7 +351,7 @@ function initializeInfiniteScroll() {
     });
 }
 
-// Contact Form
+// Contact Form - Validação e feedback
 function initializeContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
@@ -263,7 +380,7 @@ function handleFormSubmit(e) {
     
     // Show loading state
     const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Enviando...';
+    submitBtn.innerHTML = '<svg class="animate-spin" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Enviando...';
     submitBtn.disabled = true;
     
     // Simulate form submission (replace with actual endpoint)
@@ -273,7 +390,7 @@ function handleFormSubmit(e) {
         form.reset();
         
         // Reset button
-        submitBtn.textContent = originalText;
+        submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
     }, 2000);
 }
@@ -326,9 +443,6 @@ function showFieldError(field, message) {
     // Add error message
     const errorElement = document.createElement('div');
     errorElement.className = 'error-message';
-    errorElement.style.color = '#ef4444';
-    errorElement.style.fontSize = '0.875rem';
-    errorElement.style.marginTop = '0.25rem';
     errorElement.textContent = message;
     
     field.parentNode.appendChild(errorElement);
@@ -343,20 +457,6 @@ function showNotification(message, type = 'info') {
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#10b981' : '#3b82f6'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        z-index: 10000;
-        max-width: 300px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    `;
     notification.textContent = message;
     
     document.body.appendChild(notification);
@@ -377,7 +477,7 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Smooth Scrolling
+// Smooth Scrolling - Navegação suave
 function initializeSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -405,6 +505,9 @@ function initializeSmoothScrolling() {
 
 // Resize Handler
 function handleResize() {
+    // Update parallax state
+    isParallaxActive = window.innerWidth > 768;
+    
     // Reset carousel on resize
     if (window.innerWidth > 768) {
         currentSlide = 0;
@@ -423,14 +526,16 @@ function handleResize() {
 // Intersection Observer for better performance
 function initializeIntersectionObserver() {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
+                // Unobserve after animation triggered
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -442,97 +547,18 @@ function initializeIntersectionObserver() {
     });
 }
 
-// Lazy Loading Images
-function initializeLazyLoading() {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        images.forEach(img => {
-            imageObserver.observe(img);
-        });
-    }
-}
-
-// Initialize advanced features when supported
-if (window.IntersectionObserver) {
-    document.addEventListener('DOMContentLoaded', () => {
-        initializeIntersectionObserver();
-        initializeLazyLoading();
-    });
-}
-
-// Error handling
-window.addEventListener('error', function(e) {
-    console.error('JavaScript error:', e.error);
-    // Could send error to analytics service
-});
-
-// Performance monitoring
-window.addEventListener('load', function() {
-    if (window.performance) {
-        const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
-        console.log(`Page loaded in ${loadTime}ms`);
-    }
-});
-
-// Service Worker registration (if needed for PWA features)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        // Uncomment if you want to add a service worker
-        // navigator.serviceWorker.register('/sw.js');
-    });
-}
-
 // Accessibility improvements
 document.addEventListener('keydown', function(e) {
-    // ESC key closes mobile menu
-    if (e.key === 'Escape') {
-        closeMobileMenu();
-    }
-    
-    // Enter key on buttons
-    if (e.key === 'Enter' && e.target.classList.contains('carousel-btn')) {
+    // Control carousel with keyboard
+    if (document.activeElement.classList.contains('carousel-btn') && e.key === 'Enter') {
         e.target.click();
     }
 });
 
-// Focus management for accessibility
-function manageFocus() {
-    const focusableElements = document.querySelectorAll(
-        'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
-    );
-    
-    focusableElements.forEach(element => {
-        element.addEventListener('focus', function() {
-            this.style.outline = '2px solid var(--primary-color)';
-            this.style.outlineOffset = '2px';
-        });
-        
-        element.addEventListener('blur', function() {
-            this.style.outline = '';
-            this.style.outlineOffset = '';
-        });
-    });
-}
-
-// Initialize focus management
-document.addEventListener('DOMContentLoaded', manageFocus);
-
 // Console welcome message
 console.log(`
-🚀 Weethub - Soluções Digitais Inteligentes
-📧 Contato: contato@weethub.com
-🌐 Website desenvolvido com HTML5, CSS3 e JavaScript puro
-✨ Todos os efeitos e animações implementados nativamente
+⚡ Weethub - Soluções Digitais Inteligentes
+🌐 Website HTML Estático 100% Exato da versão React
+✨ Todos os efeitos e animações implementados fielmente
+📱 Responsivo e optimizado para todos os dispositivos
 `);

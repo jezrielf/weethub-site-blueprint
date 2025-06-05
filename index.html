@@ -5,23 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weethub - Soluções Digitais Inteligentes</title>
-    <meta name="description" content="Transforme seu negócio com soluções digitais profissionais. E-commerce, marketing digital e desenvolvimento web de alta qualidade.">
-    <meta name="author" content="Weethub">
-
-    <meta property="og:title" content="Weethub - Soluções Digitais Inteligentes">
-    <meta property="og:description" content="Transforme seu negócio com soluções digitais profissionais. E-commerce, marketing digital e desenvolvimento web de alta qualidade.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@weethub">
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2220%22>⚡</text></svg>">
 </head>
 <body>
     <!-- Navigation -->
@@ -29,21 +15,21 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">
                 <div class="logo-icon">W</div>
-                <span class="logo-text">weethub</span>
+                <span class="logo-text">eethub</span>
             </a>
             
-            <div class="nav-menu" id="nav-menu">
+            <div class="nav-menu">
                 <a href="#assessoria" class="nav-link">Assessoria</a>
                 <a href="#loja-virtual" class="nav-link">Loja Virtual</a>
                 <a href="#cases" class="nav-link">Cases</a>
                 <a href="#sobre-nos" class="nav-link">Sobre Nós</a>
                 <a href="#blog" class="nav-link">Blog</a>
             </div>
-
+            
             <div class="nav-actions">
-                <a href="#contato" class="btn btn-primary">Diagnóstico</a>
+                <a href="#diagnostico" class="btn btn-primary">Diagnóstico</a>
             </div>
-
+            
             <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <span></span>
                 <span></span>
@@ -51,7 +37,7 @@
             </div>
         </div>
     </nav>
-
+    
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobile-menu-overlay">
         <div class="mobile-menu-content">
@@ -62,672 +48,645 @@
             <a href="#blog" class="mobile-nav-link">Blog</a>
             <div class="mobile-nav-buttons">
                 <a href="#trabalhe-conosco" class="btn btn-secondary">Trabalhe Conosco</a>
-                <a href="#contato" class="btn btn-primary">Fale Conosco</a>
+                <a href="#diagnostico" class="btn btn-primary">Diagnóstico</a>
             </div>
         </div>
     </div>
 
-    <main>
-        <!-- Hero Section with Background Lines and Spotlight -->
-        <section class="hero-section">
-            <div class="background-lines">
-                <svg class="background-lines-svg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="bg-line" d="M720 450C720 450 742.459 440.315 755.249 425.626C768.039 410.937 778.88 418.741 789.478 401.499C800.076 384.258 817.06 389.269 826.741 380.436" stroke="#FFD700" stroke-width="2.3" stroke-linecap="round"/>
-                    <path class="bg-line" d="M720 450C720 450 741.044 435.759 753.062 410.636C765.079 385.514 770.541 386.148 782.73 370.489C794.918 354.83 799.378 353.188 811.338 332.597" stroke="#FFA500" stroke-width="2.3" stroke-linecap="round"/>
-                </svg>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <!-- Background Lines SVG -->
+        <div class="background-lines">
+            <svg class="background-lines-svg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="bg-line" d="M720 450C720 450 742.459 440.315 755.249 425.626C768.039 410.937 778.88 418.741 789.478 401.499C800.076 384.258 817.06 389.269 826.741 380.436" stroke="#46A5CA" stroke-width="2.3" stroke-linecap="round"/>
+                <path class="bg-line" d="M720 450C720 450 741.044 435.759 753.062 410.636C765.079 385.514 770.541 386.148 782.73 370.489C794.918 354.83 799.378 353.188 811.338 332.597" stroke="#8C2F2F" stroke-width="2.3" stroke-linecap="round"/>
+                <path class="bg-line" d="M720 450C720 450 712.336 437.768 690.248 407.156C668.161 376.544 672.543 394.253 665.951 365.784C659.358 337.316 647.903 347.461 636.929 323.197" stroke="#4FAE4D" stroke-width="2.3" stroke-linecap="round"/>
+                <path class="bg-line" d="M720 450C720 450 738.983 448.651 790.209 446.852C841.436 445.052 816.31 441.421 861.866 437.296C907.422 433.172 886.273 437.037 930.656 436.651" stroke="#D6590C" stroke-width="2.3" stroke-linecap="round"/>
+                <path class="bg-line" d="M720 450C720 450 696.366 458.841 682.407 472.967C668.448 487.093 673.23 487.471 647.919 492.882C622.608 498.293 636.85 499.899 609.016 512.944" stroke="#811010" stroke-width="2.3" stroke-linecap="round"/>
+                <path class="bg-line" d="M720 450C720 450 765.293 459.346 789.305 476.402C813.318 493.459 825.526 487.104 865.093 495.586C904.659 504.068 908.361 510.231 943.918 523.51" stroke="#247AFB" stroke-width="2.3" stroke-linecap="round"/>
+            </svg>
+        </div>
+        
+        <!-- Spotlight Effect -->
+        <div class="spotlight"></div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Transformamos negócios com 
+                <span class="flip-words" id="flip-words">Excelência</span>
+            </h1>
+            <p class="hero-description">
+                Soluções digitais inteligentes que aceleram o crescimento da sua empresa no mercado online
+            </p>
+            <div class="hero-buttons">
+                <a href="#diagnostico" class="btn btn-primary btn-large">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12L10 17L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Diagnóstico Gratuito
+                </a>
+                <a href="#cases" class="btn btn-outline btn-large">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 3H6C5.46957 3 4.96086 3.21071 4.58579 3.58579C4.21071 3.96086 4 4.46957 4 5V19C4 19.5304 4.21071 20.0391 4.58579 20.4142C4.96086 20.7893 5.46957 21 6 21H18C18.5304 21 19.0391 20.7893 19.4142 20.4142C19.7893 20.0391 20 19.5304 20 19V8L15 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 3V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Ver Cases
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Parallax Section -->
+    <section class="hero-parallax" id="hero-parallax">
+        <div class="parallax-header">
+            <h2 class="parallax-title">Lojas Virtuais que Vendem</h2>
+            <p class="parallax-description">
+                Desenvolvemos e-commerces com foco em conversão e experiência do usuário
+            </p>
+        </div>
+        
+        <!-- Desktop Parallax -->
+        <div class="parallax-desktop">
+            <div class="parallax-row parallax-row-1">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=525&h=350&fit=crop&crop=center" alt="E-commerce Moderno" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>E-commerce Premium</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=525&h=350&fit=crop&crop=center" alt="Loja Virtual Responsiva" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Design Responsivo</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=525&h=350&fit=crop&crop=center" alt="Dashboard Vendas" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Dashboard Analytics</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=525&h=350&fit=crop&crop=center" alt="Interface Checkout" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Checkout Otimizado</h3>
+                    </div>
+                </div>
             </div>
             
-            <div class="spotlight"></div>
+            <div class="parallax-row parallax-row-2">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=525&h=350&fit=crop&crop=center" alt="Mobile E-commerce" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Mobile First</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=525&h=350&fit=crop&crop=center" alt="Sistema Integrado" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Integração ERP</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=525&h=350&fit=crop&crop=center" alt="Performance Metrics" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Métricas de Performance</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=525&h=350&fit=crop&crop=center" alt="SEO Optimization" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>SEO Otimizado</h3>
+                    </div>
+                </div>
+            </div>
             
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Transformamos e-commerces com 
-                    <span class="flip-words" id="flip-words">Excelência</span>
-                </h1>
+            <div class="parallax-row parallax-row-3">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=525&h=350&fit=crop&crop=center" alt="Segurança E-commerce" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Segurança Avançada</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=525&h=350&fit=crop&crop=center" alt="Multi-channel" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Vendas Multi-canal</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=525&h=350&fit=crop&crop=center" alt="Automação Marketing" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Marketing Automation</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=525&h=350&fit=crop&crop=center" alt="Support System" loading="lazy">
+                    <div class="product-overlay">
+                        <h3>Suporte 24/7</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Carousel -->
+        <div class="parallax-mobile">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=280&fit=crop&crop=center" alt="E-commerce Premium" loading="lazy">
+                        <div class="carousel-overlay">
+                            <h3>E-commerce Premium</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=280&fit=crop&crop=center" alt="Design Responsivo" loading="lazy">
+                        <div class="carousel-overlay">
+                            <h3>Design Responsivo</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&h=280&fit=crop&crop=center" alt="Dashboard Analytics" loading="lazy">
+                        <div class="carousel-overlay">
+                            <h3>Dashboard Analytics</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=280&fit=crop&crop=center" alt="Checkout Otimizado" loading="lazy">
+                        <div class="carousel-overlay">
+                            <h3>Checkout Otimizado</h3>
+                        </div>
+                    </div>
+                </div>
                 
-                <p class="hero-description">
-                    Somos especialistas em e-commerce com mais de 25 anos de experiência, 
-                    transformando lojas virtuais em máquinas de vendas com resultados comprovados.
-                </p>
+                <button class="carousel-btn carousel-prev" id="carousel-prev">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel-btn carousel-next" id="carousel-next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
                 
-                <div class="hero-buttons">
-                    <a href="#contato" class="btn btn-primary btn-large">
-                        Acelerar meu E-commerce
-                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14m-7-7 7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#cases" class="btn btn-outline btn-large">
-                        Resultados da Weethub
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hero Parallax - Virtual Stores Showcase -->
-        <section class="hero-parallax" id="hero-parallax">
-            <div class="parallax-header">
-                <h2 class="parallax-title">Lojas Virtuais de Alto Desempenho</h2>
-                <p class="parallax-description">
-                    Desenvolvemos lojas virtuais que convertem visitantes em clientes. 
-                    Conheça alguns dos nossos projetos que transformaram negócios e geraram resultados excepcionais.
-                </p>
-            </div>
-
-            <!-- Desktop Layout -->
-            <div class="parallax-desktop">
-                <div class="parallax-row parallax-row-1">
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/8.png" alt="TAINÁ COSTA" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>TAINÁ COSTA</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/1.png" alt="HISHA" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>HISHA</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/2.png" alt="LV STORE" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>LV STORE</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/4.png" alt="GOOD VIBRES" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>GOOD VIBRES</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/5.png" alt="PANELA MINEIRA" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>PANELA MINEIRA</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="parallax-row parallax-row-2">
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/7.png" alt="SILVER CROWN" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>SILVER CROWN</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/6.png" alt="MAIS MU" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>MAIS MU</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/10.png" alt="LES CLOCHES" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>LES CLOCHES</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/9.png" alt="ERA UMA VEZ CHALEZINHO" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>ERA UMA VEZ CHALEZINHO</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/14.png" alt="CENTRAL DOS CABELOS E PERUCAS" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>CENTRAL DOS CABELOS E PERUCAS</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="parallax-row parallax-row-3">
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/11.png" alt="PURO CHARME" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>PURO CHARME</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/22.png" alt="NOT ME SHOES" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>NOT ME SHOES</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/23.png" alt="RENNOVA BEAUTY" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>RENNOVA BEAUTY</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/3.png" alt="MAJESTE" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>MAJESTE</h3>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://weethub.com/wp-content/uploads/2025/05/15.png" alt="MUNDO DOS BARBEIROS" loading="lazy">
-                        <div class="product-overlay">
-                            <h3>MUNDO DOS BARBEIROS</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Carousel -->
-            <div class="parallax-mobile">
-                <div class="carousel-container">
-                    <div class="carousel-track" id="carousel-track">
-                        <div class="carousel-slide">
-                            <img src="https://weethub.com/wp-content/uploads/2025/05/8.png" alt="TAINÁ COSTA">
-                            <div class="carousel-overlay">
-                                <h3>TAINÁ COSTA</h3>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://weethub.com/wp-content/uploads/2025/05/1.png" alt="HISHA">
-                            <div class="carousel-overlay">
-                                <h3>HISHA</h3>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://weethub.com/wp-content/uploads/2025/05/2.png" alt="LV STORE">
-                            <div class="carousel-overlay">
-                                <h3>LV STORE</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-btn carousel-prev" id="carousel-prev">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M15 18l-6-6 6-6"/>
-                        </svg>
-                    </button>
-                    <button class="carousel-btn carousel-next" id="carousel-next">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 18l6-6-6-6"/>
-                        </svg>
-                    </button>
-                </div>
                 <div class="carousel-indicators" id="carousel-indicators">
                     <div class="indicator active"></div>
                     <div class="indicator"></div>
                     <div class="indicator"></div>
+                    <div class="indicator"></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Cases Section -->
-        <section class="cases-section" id="cases">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Cases de Sucesso</h2>
-                    <p class="section-description">
-                        Conheça alguns dos nossos projetos que transformaram negócios e geraram resultados excepcionais
-                    </p>
+    <!-- Cases Section -->
+    <section class="cases-section" id="cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">E-commerces com Resultados</h2>
+                <p class="section-description">
+                    Cases de sucesso que demonstram o poder das nossas soluções digitais
+                </p>
+            </div>
+            
+            <div class="cases-grid">
+                <div class="case-card animate-on-scroll">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center" alt="Case Fashion Store" loading="lazy">
+                    </div>
+                    <div class="case-content">
+                        <h3>Fashion Store Premium</h3>
+                        <p>E-commerce de moda com aumento de 300% nas vendas online em 6 meses.</p>
+                        <div class="case-metrics">
+                            <span class="metric">+300% Vendas</span>
+                            <span class="metric">2.5M Pageviews</span>
+                            <span class="metric">4.8% Conversão</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="cases-grid">
-                    <div class="case-card">
-                        <div class="case-image">
-                            <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop" alt="Case 1" loading="lazy">
+                <div class="case-card animate-on-scroll">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop&crop=center" alt="Case Tech Store" loading="lazy">
+                    </div>
+                    <div class="case-content">
+                        <h3>Tech Store Pro</h3>
+                        <p>Loja de tecnologia com sistema de reviews e comparação de produtos.</p>
+                        <div class="case-metrics">
+                            <span class="metric">+250% ROI</span>
+                            <span class="metric">98% Uptime</span>
+                            <span class="metric">3.2s Load</span>
                         </div>
-                        <div class="case-content">
-                            <h3>E-commerce de Moda</h3>
-                            <p>Aumento de 300% nas vendas online em 6 meses</p>
-                            <div class="case-metrics">
-                                <span class="metric">+300% vendas</span>
-                                <span class="metric">+150% conversão</span>
-                            </div>
+                    </div>
+                </div>
+                
+                <div class="case-card animate-on-scroll">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&h=300&fit=crop&crop=center" alt="Case Marketplace" loading="lazy">
+                    </div>
+                    <div class="case-content">
+                        <h3>Marketplace Multi-seller</h3>
+                        <p>Plataforma multi-vendedor com gestão completa de comissões e pagamentos.</p>
+                        <div class="case-metrics">
+                            <span class="metric">500+ Vendedores</span>
+                            <span class="metric">50K+ Produtos</span>
+                            <span class="metric">R$ 2M+ GMV</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <p class="section-description">
+                    Soluções completas para acelerar o crescimento digital do seu negócio
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17C2 17.5304 2.21071 18.0391 2.58579 18.4142C2.96086 18.7893 3.46957 19 4 19H20C20.5304 19 21.0391 18.7893 21.4142 18.4142C21.7893 18.0391 22 17.5304 22 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>E-commerce Completo</h3>
+                    <p>Desenvolvimento de lojas virtuais com foco em conversão e experiência do usuário.</p>
+                    <a href="#ecommerce" class="service-link">
+                        Saiba Mais
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19C10.5 20.5 12.5 20.5 14 19L20 13C21.5 11.5 21.5 8.5 20 7C18.5 5.5 15.5 5.5 14 7L13 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 5C16.5 3.5 18.5 3.5 20 5C21.5 6.5 21.5 9.5 20 11L14 17C12.5 18.5 10.5 18.5 9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Marketing Digital</h3>
+                    <p>Estratégias de marketing digital para aumentar sua presença online e gerar mais vendas.</p>
+                    <a href="#marketing" class="service-link">
+                        Saiba Mais
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 17L13 8L8 13L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Analytics & SEO</h3>
+                    <p>Otimização para motores de busca e análise detalhada de performance do seu site.</p>
+                    <a href="#analytics" class="service-link">
+                        Saiba Mais
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section" id="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Clientes que Confiam</h2>
+                <p class="section-description">
+                    Empresas que já transformaram seus negócios com nossas soluções
+                </p>
+            </div>
+            
+            <div class="infinite-scroll">
+                <div class="infinite-track">
+                    <div class="client-logo">TechCorp</div>
+                    <div class="client-logo">ModaStyle</div>
+                    <div class="client-logo">SportZone</div>
+                    <div class="client-logo">BeautyShop</div>
+                    <div class="client-logo">HomeDecor</div>
+                    <div class="client-logo">FoodMarket</div>
+                    <div class="client-logo">GadgetPro</div>
+                    <div class="client-logo">EcoLife</div>
+                </div>
+            </div>
+            
+            <div class="clients-footer">
+                <p>Mais de 200 empresas confiam em nossas soluções digitais</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="results">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Resultados que Falam</h2>
+                <p class="section-description">
+                    Números que comprovam a eficácia das nossas soluções digitais
+                </p>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card animate-on-scroll">
+                    <div class="result-value">300%</div>
+                    <div class="result-label">Aumento médio em vendas</div>
+                </div>
+                <div class="result-card animate-on-scroll">
+                    <div class="result-value">200+</div>
+                    <div class="result-label">Projetos entregues</div>
+                </div>
+                <div class="result-card animate-on-scroll">
+                    <div class="result-value">95%</div>
+                    <div class="result-label">Taxa de satisfação</div>
+                </div>
+                <div class="result-card animate-on-scroll">
+                    <div class="result-value">24/7</div>
+                    <div class="result-label">Suporte técnico</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefits-content">
+                    <h2>Por que Escolher a Weethub?</h2>
+                    <p class="benefits-description">
+                        Somos especialistas em transformação digital com foco em resultados mensuráveis e crescimento sustentável.
+                    </p>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item animate-on-scroll">
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Expertise em e-commerce e marketing digital</span>
+                        </div>
+                        <div class="benefit-item animate-on-scroll">
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Foco em ROI e resultados mensuráveis</span>
+                        </div>
+                        <div class="benefit-item animate-on-scroll">
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Suporte técnico especializado 24/7</span>
+                        </div>
+                        <div class="benefit-item animate-on-scroll">
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Tecnologia de ponta e inovação constante</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="benefits-stats">
+                    <div class="stat-card animate-on-scroll">
+                        <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 17L13 8L8 13L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="stat-value">5 Anos</div>
+                        <div class="stat-label">Experiência no mercado</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 21V19C23 18.1332 22.7361 17.2854 22.2447 16.5563C21.7534 15.8271 21.0577 15.2487 20.24 14.8789" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3.13C16.8604 3.47979 17.5856 4.06266 18.0892 4.81671C18.5928 5.57076 18.8479 6.45899 18.8479 7.365C18.8479 8.271 18.5928 9.15924 18.0892 9.91329C17.5856 10.6673 16.8604 11.2502 16 11.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Especialistas</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17C2 17.5304 2.21071 18.0391 2.58579 18.4142C2.96086 18.7893 3.46957 19 4 19H20C20.5304 19 21.0391 18.7893 21.4142 18.4142C21.7893 18.0391 22 17.5304 22 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Uptime garantido</div>
+                    </div>
+                    
+                    <div class="stat-card animate-on-scroll">
+                        <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="stat-value">24h</div>
+                        <div class="stat-label">Tempo de resposta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Parcerias Estratégicas</h2>
+                <p class="section-description">
+                    Trabalhamos com as melhores tecnologias e plataformas do mercado
+                </p>
+            </div>
+            
+            <div class="infinite-scroll infinite-scroll-right">
+                <div class="infinite-track">
+                    <div class="partner-logo">Shopify</div>
+                    <div class="partner-logo">WooCommerce</div>
+                    <div class="partner-logo">Magento</div>
+                    <div class="partner-logo">Google Ads</div>
+                    <div class="partner-logo">Facebook</div>
+                    <div class="partner-logo">Mercado Pago</div>
+                    <div class="partner-logo">PagSeguro</div>
+                    <div class="partner-logo">AWS</div>
+                </div>
+            </div>
+            
+            <div class="partners-info">
+                <div class="info-card">
+                    <h3>Tecnologias Líderes</h3>
+                    <p>Utilizamos apenas as melhores tecnologias e plataformas para garantir performance e escalabilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+                <p class="section-description">
+                    Depoimentos reais de empresas que transformaram seus negócios conosco
+                </p>
+            </div>
+            
+            <div class="infinite-scroll">
+                <div class="infinite-track">
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">
+                            "A Weethub transformou completamente nossa presença online. Nossas vendas aumentaram 300% em apenas 6 meses."
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Maria Silva</strong>
+                            <span>CEO, Fashion Store</span>
                         </div>
                     </div>
                     
-                    <div class="case-card">
-                        <div class="case-image">
-                            <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop" alt="Case 2" loading="lazy">
-                        </div>
-                        <div class="case-content">
-                            <h3>Tech Store</h3>
-                            <p>Implementação completa de marketplace</p>
-                            <div class="case-metrics">
-                                <span class="metric">+200% faturamento</span>
-                                <span class="metric">+80% clientes</span>
-                            </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">
+                            "Excelente trabalho! A equipe é muito profissional e sempre disponível para ajudar. Recomendo fortemente."
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>João Santos</strong>
+                            <span>Diretor, Tech Corp</span>
                         </div>
                     </div>
                     
-                    <div class="case-card">
-                        <div class="case-image">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop" alt="Case 3" loading="lazy">
-                        </div>
-                        <div class="case-content">
-                            <h3>Cosmética Premium</h3>
-                            <p>Estratégia digital completa com resultados excepcionais</p>
-                            <div class="case-metrics">
-                                <span class="metric">+250% ROI</span>
-                                <span class="metric">+120% ticket médio</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Nossas Soluções Estratégicas</h2>
-                    <p class="section-description">
-                        Oferecemos soluções completas para transformar sua presença digital
-                        e gerar resultados excepcionais em projetos de alto valor.
-                    </p>
-                </div>
-
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 3v5h5M21 21v-5h-5M3 21l6-6M21 3l-6 6"/>
-                            </svg>
-                        </div>
-                        <h3>Assessoria Completa</h3>
-                        <p>Analisamos cada aspecto do seu negócio online, identificando oportunidades de melhoria e implementando estratégias eficazes baseadas em estudos de mercado.</p>
-                        <a href="#assessoria" class="service-link">
-                            Saiba Mais
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14m-7-7 7 7-7 7"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                                <line x1="3" x2="21" y1="6" y2="6"/>
-                                <path d="M16 10a4 4 0 0 1-8 0"/>
-                            </svg>
-                        </div>
-                        <h3>Lojas Virtuais Premium</h3>
-                        <p>Desenvolvemos lojas virtuais otimizadas e prontas para vender, integradas com as melhores plataformas do país.</p>
-                        <a href="#loja-virtual" class="service-link">
-                            Saiba Mais
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14m-7-7 7 7-7 7"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <circle cx="12" cy="12" r="6"/>
-                                <circle cx="12" cy="12" r="2"/>
-                            </svg>
-                        </div>
-                        <h3>Consultoria de Vendas</h3>
-                        <p>Oferecemos consultoria especializada para aprimorar suas estratégias de vendas online com métodos validados.</p>
-                        <a href="#blog" class="service-link">
-                            Saiba Mais
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14m-7-7 7 7-7 7"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Clients Section -->
-        <section class="clients-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Nossos <span class="text-primary">Clientes</span></h2>
-                    <p class="section-description">
-                        Empresas que confiam na Weethub para transformar seus negócios digitais
-                    </p>
-                </div>
-
-                <div class="infinite-scroll" id="clients-scroll">
-                    <div class="infinite-track">
-                        <div class="client-logo">TechCorp</div>
-                        <div class="client-logo">InnovaSoft</div>
-                        <div class="client-logo">DigitalPlus</div>
-                        <div class="client-logo">SmartSolutions</div>
-                        <div class="client-logo">CloudTech</div>
-                        <div class="client-logo">DataFlow</div>
-                        <div class="client-logo">WebMaster</div>
-                        <div class="client-logo">NextGen</div>
-                        <div class="client-logo">DevCorp</div>
-                        <div class="client-logo">CodeBase</div>
-                        <div class="client-logo">TechFlow</div>
-                        <div class="client-logo">DigitalWorks</div>
-                    </div>
-                </div>
-
-                <div class="clients-footer">
-                    <p>+ de <span class="text-primary font-bold">500 clientes</span> ativos em diversos segmentos de mercado</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Results Section -->
-        <section class="results-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Resultados Comprovados</h2>
-                    <p class="section-description">
-                        Empresas que confiaram na Weethub alcançaram resultados significativos
-                    </p>
-                </div>
-
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-value">112%</div>
-                        <div class="result-label">Crescimento no faturamento em 30 dias</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-value">93%</div>
-                        <div class="result-label">Aumento no número de pedidos</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-value">15%</div>
-                        <div class="result-label">Incremento no ticket médio</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-value">R$50k+</div>
-                        <div class="result-label">Projetos mensais de alto valor</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefits Section -->
-        <section class="benefits-section">
-            <div class="container">
-                <div class="benefits-grid">
-                    <div class="benefits-content">
-                        <h2 class="section-title">Metodologia Baseada em Dados e Performance</h2>
-                        <p class="benefits-description">
-                            Nossa abordagem é fundamentada em dados concretos e análise de performance. 
-                            Utilizamos ferramentas avançadas de BI, CRM, SEO, CRO e tráfego pago para 
-                            tomar decisões estratégicas que impulsionam o crescimento do seu e-commerce.
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">
+                            "ROI impressionante! O investimento se pagou em menos de 3 meses. A Weethub entende realmente de e-commerce."
                         </p>
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                                <span>Mais de 20 anos de experiência no mercado digital</span>
-                            </div>
-                            <div class="benefit-item">
-                                <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                                <span>Metodologia baseada em dados e performance</span>
-                            </div>
-                            <div class="benefit-item">
-                                <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                                <span>Parcerias com as principais plataformas do mercado</span>
-                            </div>
-                            <div class="benefit-item">
-                                <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                                <span>Resultados comprovados em projetos de alto valor</span>
-                            </div>
+                        <div class="testimonial-author">
+                            <strong>Ana Costa</strong>
+                            <span>Fundadora, Beauty Shop</span>
                         </div>
                     </div>
-                    <div class="benefits-stats">
-                        <div class="stat-card">
-                            <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="8" r="7"/>
-                                <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
-                            </svg>
-                            <div class="stat-value">Desde 2001</div>
-                            <div class="stat-label">Transformando empresas em histórias de sucesso</div>
-                        </div>
-                        <div class="stat-card">
-                            <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                            </svg>
-                            <div class="stat-value">2000+</div>
-                            <div class="stat-label">Projetos Entregues</div>
-                        </div>
-                        <div class="stat-card">
-                            <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                            <div class="stat-value">500+</div>
-                            <div class="stat-label">Clientes Ativos</div>
-                        </div>
-                        <div class="stat-card">
-                            <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
-                            </svg>
-                            <div class="stat-value">98%</div>
-                            <div class="stat-label">Satisfação</div>
+                    
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">
+                            "Suporte excepcional e resultados que superam as expectativas. Não conseguimos imaginar nosso negócio sem a Weethub."
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Carlos Oliveira</strong>
+                            <span>Owner, Sport Zone</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Partners Section -->
-        <section class="partners-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Nossos <span class="text-primary">Parceiros</span></h2>
-                    <p class="section-description">
-                        Trabalhamos com as principais plataformas e tecnologias do mercado
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <h2>Pronto para Transformar seu Negócio?</h2>
+                    <p class="contact-description">
+                        Solicite um diagnóstico gratuito e descubra como podemos acelerar o crescimento da sua empresa no digital.
                     </p>
-                </div>
-
-                <div class="infinite-scroll infinite-scroll-right" id="partners-scroll">
-                    <div class="infinite-track">
-                        <div class="partner-logo">Shopify</div>
-                        <div class="partner-logo">WooCommerce</div>
-                        <div class="partner-logo">Magento</div>
-                        <div class="partner-logo">Vtex</div>
-                        <div class="partner-logo">Google</div>
-                        <div class="partner-logo">Meta</div>
-                        <div class="partner-logo">AWS</div>
-                        <div class="partner-logo">Mercado Livre</div>
-                        <div class="partner-logo">PagSeguro</div>
-                        <div class="partner-logo">PayPal</div>
+                    
+                    <div class="contact-benefits">
+                        <div class="benefit-item">
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Diagnóstico gratuito e sem compromisso</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Consultoria personalizada para seu negócio</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Resposta em até 24 horas</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="partners-info">
-                    <div class="info-card">
-                        <h3>Parcerias Estratégicas</h3>
-                        <p>
-                            Mantemos parcerias oficiais com as principais plataformas de e-commerce 
-                            e ferramentas de marketing digital, garantindo sempre as melhores soluções 
-                            e suporte técnico especializado para nossos clientes.
-                        </p>
-                    </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="nome">Nome *</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="empresa">Empresa</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+                        </div>
+                        
+                        <div class="form-group form-group-full">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" required placeholder="Conte-nos sobre seu projeto e objetivos..." rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Solicitar Diagnóstico
+                        </button>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Testimonials Section -->
-        <section class="testimonials-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">O que nossos clientes dizem</h2>
-                    <p class="section-description">
-                        Depoimentos reais de empresas que transformaram seus negócios com a Weethub
-                    </p>
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="info-item">
+                    <h3>Localização</h3>
+                    <p>São Paulo, SP<br>Atendimento em todo Brasil</p>
                 </div>
-
-                <div class="infinite-scroll" id="testimonials-scroll">
-                    <div class="infinite-track">
-                        <div class="testimonial-card">
-                            <p class="testimonial-quote">
-                                "A Weethub transformou completamente nossa loja virtual. Em apenas 3 meses, 
-                                nossas vendas aumentaram 200% e nossa conversão triplicou. A equipe é excepcional!"
-                            </p>
-                            <div class="testimonial-author">
-                                <strong>Maria Silva</strong>
-                                <span>CEO, Fashion Store Premium</span>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <p class="testimonial-quote">
-                                "Trabalhar com a Weethub foi a melhor decisão que tomamos. O suporte é incrível 
-                                e os resultados superaram todas as nossas expectativas. Recomendo fortemente!"
-                            </p>
-                            <div class="testimonial-author">
-                                <strong>João Santos</strong>
-                                <span>Diretor Comercial, TechMart</span>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <p class="testimonial-quote">
-                                "A expertise da Weethub em e-commerce é impressionante. Eles não apenas criaram 
-                                nossa loja, mas nos ensinaram como otimizar cada aspecto do negócio digital."
-                            </p>
-                            <div class="testimonial-author">
-                                <strong>Ana Costa</strong>
-                                <span>Proprietária, Cosmética Natural</span>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <p class="testimonial-quote">
-                                "Desde que começamos a trabalhar com a Weethub, nosso faturamento mensal aumentou 300%. 
-                                O ROI foi muito além do que esperávamos. Parceria de sucesso!"
-                            </p>
-                            <div class="testimonial-author">
-                                <strong>Carlos Mendes</strong>
-                                <span>Fundador, SportLife Online</span>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <p class="testimonial-quote">
-                                "A Weethub entende realmente do mercado digital. Sua metodologia baseada em dados 
-                                nos ajudou a tomar decisões estratégicas que impulsionaram nosso crescimento."
-                            </p>
-                            <div class="testimonial-author">
-                                <strong>Fernanda Lima</strong>
-                                <span>CMO, GourmetPlace</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="info-item">
+                    <h3>Contato</h3>
+                    <p>contato@weethub.com<br>(11) 99999-9999</p>
+                </div>
+                <div class="info-item">
+                    <h3>Horário</h3>
+                    <p>Segunda a Sexta: 9h às 18h<br>Suporte 24/7 para clientes</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section class="contact-section" id="contato">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-content">
-                        <h2 class="section-title">Pronto para transformar seu negócio?</h2>
-                        <p class="contact-description">
-                            Entre em contato conosco e descubra como podemos levar seu e-commerce 
-                            ao próximo nível com nossa metodologia comprovada e mais de 25 anos de experiência.
-                        </p>
-                        <div class="contact-benefits">
-                            <div class="benefit-item">
-                                <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                                <span>Mais de 20 anos de experiência no mercado digital</span>
-                            </div>
-                            <div class="benefit-item">
-                                <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                                <span>Metodologia baseada em dados e performance</span>
-                            </div>
-                            <div class="benefit-item">
-                                <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                                <span>Parcerias com as principais plataformas do mercado</span>
-                            </div>
-                            <div class="benefit-item">
-                                <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-                                </svg>
-                                <span>Resultados comprovados em projetos de alto valor</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-form-container">
-                        <form class="contact-form" id="contact-form">
-                            <div class="form-group">
-                                <label for="firstName">Nome*</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Sobrenome*</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email*</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Telefone*</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group form-group-full">
-                                <label for="company">Empresa</label>
-                                <input type="text" id="company" name="company">
-                            </div>
-                            <div class="form-group form-group-full">
-                                <label for="message">Mensagem*</label>
-                                <textarea id="message" name="message" rows="4" required placeholder="Conte-nos sobre seu projeto..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-large form-submit">
-                                Enviar Mensagem
-                                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14m-7-7 7 7-7 7"/>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Info Section -->
-        <section class="contact-info-section">
-            <div class="container">
-                <div class="contact-info-grid">
-                    <div class="info-item">
-                        <h3>Endereço</h3>
-                        <p>
-                            Av. Cel. Júlio Ribeiro Gontijo, Nº 321<br>
-                            Bairro Esplanada, Divinópolis - MG
-                        </p>
-                    </div>
-                    <div class="info-item">
-                        <h3>CNPJ</h3>
-                        <p>04.256.242/0001-00</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -736,70 +695,69 @@
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <div class="logo-icon">W</div>
-                        <span class="logo-text">weethub</span>
+                        <span class="logo-text">eethub</span>
                     </div>
                     <p class="footer-description">
-                        Transformando negócios através de soluções digitais inteligentes e estratégicas.
-                        Especialistas em e-commerce, marketing digital e desenvolvimento web.
+                        Transformamos negócios com soluções digitais inteligentes, focando em resultados mensuráveis e crescimento sustentável.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <path d="M8 21l4-7 4 7"/>
-                                <path d="M8 21h8"/>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61992 14.1902 8.22773 13.4229 8.09407 12.5922C7.9604 11.7615 8.09207 10.9099 8.47033 10.1584C8.84859 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                <rect x="2" y="9" width="4" height="12"/>
-                                <circle cx="4" cy="4" r="2"/>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
                     </div>
                 </div>
-
+                
                 <div class="footer-links">
-                    <h3>Links Rápidos</h3>
+                    <h3>Serviços</h3>
                     <ul>
-                        <li><a href="#assessoria">Assessoria Completa</a></li>
-                        <li><a href="#loja-virtual">Loja Virtual</a></li>
-                        <li><a href="#sobre-nos">Sobre Nós</a></li>
-                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#ecommerce">E-commerce</a></li>
+                        <li><a href="#marketing">Marketing Digital</a></li>
+                        <li><a href="#analytics">Analytics & SEO</a></li>
+                        <li><a href="#assessoria">Assessoria</a></li>
                     </ul>
                 </div>
-
+                
                 <div class="footer-contact">
                     <h3>Contato</h3>
                     <div class="contact-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="L22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span>(11) 99999-9999</span>
+                        contato@weethub.com
                     </div>
                     <div class="contact-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59344 1.99522 8.06477 2.16708 8.43945 2.48353C8.81413 2.79999 9.06952 3.23945 9.15999 3.72C9.33067 4.68007 9.62273 5.62273 10.03 6.53C10.1774 6.88792 10.2154 7.28313 10.1393 7.66353C10.0632 8.04394 9.87617 8.39541 9.59999 8.67L8.37999 9.89C9.69869 12.4135 11.5865 14.3012 14.11 15.62L15.33 14.4C15.6046 14.1238 15.9561 13.9368 16.3365 13.8607C16.7169 13.7846 17.1121 13.8226 17.47 13.97C18.3773 14.3773 19.3199 14.6693 20.28 14.84C20.7658 14.9307 21.2094 15.1892 21.5265 15.5689C21.8437 15.9486 22.0122 16.4234 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span>contato@weethub.com</span>
+                        (11) 99999-9999
                     </div>
                     <div class="contact-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span>São Paulo, SP<br>Brasil</span>
+                        São Paulo, SP
                     </div>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 Weethub. Todos os direitos reservados.</p>
             </div>
